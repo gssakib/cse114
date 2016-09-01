@@ -1,0 +1,14 @@
+
+public class Schedule {
+
+	public static void main(String[] args) {
+		
+		System.out.println("Gazi Sakib's Schedule");
+		System.out.println("SBU ID: 109849940");
+		System.out.println("                     Monday    Tuesday    Wednesday    Thursday    Friday");
+		System.out.println("Gazi Sakib's Schedule");
+		// TODO Auto-generated method stub
+
+	}
+
+}

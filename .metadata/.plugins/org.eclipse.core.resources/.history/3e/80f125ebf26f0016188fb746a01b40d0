@@ -1,0 +1,12 @@
+
+public class Schedule {
+
+	public static void main(String[] args) {
+		
+		System.out.prinln("lala");
+		
+		// TODO Auto-generated method stub
+
+	}
+
+}
