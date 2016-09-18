@@ -1,9 +1,0 @@
-
-public class BMR {
-
-	public static void main(String[] args) {
-		System.out.print("Enter the person’s weight in pounds: "));
-
-	}
-
-}

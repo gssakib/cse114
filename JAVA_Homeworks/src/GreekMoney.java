@@ -2,6 +2,13 @@ import java.util.Scanner;
 public class GreekMoney {
 
 	public static void main(String[] args) {
+/*
+		Name: Gazi Sakib
+		SBU ID - 109849940
+		Course No. - CSE 114
+		Assignment Name - : Show Me the Money (Problem 3)(Homework 2) 
+
+*/
 		System.out.print("Enter number of oboloi: ");
 		Scanner in = new Scanner(System.in);
 		
