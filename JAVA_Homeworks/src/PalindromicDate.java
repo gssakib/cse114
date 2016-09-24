@@ -1,6 +1,16 @@
 import java.util.Scanner;
 
 public class PalindromicDate {
+	
+/*
+	Name: Gazi Sakib
+	SBU ID - 109849940
+	Course No. - CSE 114
+	Assignment Name - : Time Flies When You’re Having Fun (Problem 1)(Homework 3) 
+
+*/	
+	
+	
 
 	public static void main(String[] args) {
 		Scanner stdin = new Scanner(System.in);
@@ -23,7 +33,7 @@ public class PalindromicDate {
 		
 		System.out.print("Enter year: ");
 		year = stdin.nextInt();
-		if(year <= 0){
+		if(year <= 1600){
 			System.out.println("Bad Input");
 			System.exit(-1);
 		}

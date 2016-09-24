@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class DayOfWeek {
+
+	public static void main(String[] args) {
+		Scanner stdin = new Scanner(System.in);
+
+		System.out.print("Enter year (e.g., 1918): ");
+		String year = stdin.nextLine();
+		
+		System.out.print("Enter month (1-12): ");
+		int month = stdin.nextInt();
+		
+		System.out.print("Enter the day of the month (1-31): ");
+		int day = stdin.nextInt();
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class StonyBrookResort {
+
+	public static void main(String[] args) {
+		final double EACHADULTPERDAY = 125;
+		final double EACHCHILDTPERDAY = 75;
+		
+		Scanner stdin = new Scanner(System.in);
+		
+		System.out.print("Enter number of adults: ");
+		double adultsNo = stdin.nextInt();
+		
+		System.out.print("Enter number of children: ");
+		double childrenNo = stdin.nextInt();
+		
+		System.out.print("Enter length of vacation in days:  ");
+		double vacationDays = stdin.nextInt();
+		
+		System.out.println("Enter day of week that vacation starts: ");
+		String startDay = stdin.nextLine();
+		
+		double totalBefore =   vacationDays * ((EACHADULTPERDAY * adultsNo) + (EACHCHILDTPERDAY * childrenNo)) ;
+		System.out.printf("Total before discounts: $%.2f", totalBefore);
+		
+		
+	}
+
+}

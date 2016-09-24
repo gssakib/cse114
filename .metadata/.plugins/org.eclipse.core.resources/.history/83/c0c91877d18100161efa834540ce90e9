@@ -1,0 +1,60 @@
+import java.util.Scanner;
+
+public class Payday {
+
+	public static void main(String[] args) {
+		double fixedSalary = 0;
+		double hourlyWage = 0;
+		double hoursWorked = 0;
+		double weeklySales = 0;
+		double piecesProduced = 0;
+		double payperpiece = 0;
+		double commission = 0;
+		
+		Scanner stdin = new Scanner(System.in);
+		
+		System.out.print("Choose employee type: (m) manager (h) hourly (c) commission (p) pieceworker: ");
+		String option = stdin.nextLine();
+		
+		if(option.equals("m")){
+			System.out.print("Enter weekly salary: ");
+			fixedSalary = stdin.nextDouble();
+			
+		}else if (option.equals("h")){
+			System.out.print("Enter hourly wage: ");
+			hourlyWage = stdin.nextDouble();
+			
+			System.out.print("Enter hours worked: ");
+			hoursWorked = stdin.nextDouble();
+			
+		}else if (option.equals("c")){
+			System.out.print("Enter weekly sales: ");
+			weeklySales = stdin.nextDouble();
+			commission = 250.0 + + 0.057 * weeklySales;
+			
+		}else if (option.equals("p")){
+			System.out.print("Enter pieces produced: ");
+			piecesProduced = stdin.nextDouble();
+			
+			System.out.print("Enter pay per piece: ");
+			payperpiece = stdin.nextDouble();
+			
+			
+		}else {
+			System.out.println("Bad Input");
+			System.exit(-1);
+		}
+		double grossPay = fixedSalary +  hourlyWage * hoursWorked + piecesProduced * payperpiece + commission;
+		double taxes  = .125 * grossPay;
+		double netPay = grossPay - taxes;
+		
+		System.out.printf("Gross pay: $%.2f%n", grossPay);
+		System.out.printf("Taxes: $%.2f%n", taxes);
+		System.out.printf("Net pay: $%.2f%n", netPay);
+
+	
+	}
+	
+	
+
+}
