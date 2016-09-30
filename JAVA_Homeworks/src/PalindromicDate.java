@@ -21,14 +21,14 @@ public class PalindromicDate {
 		System.out.print("Enter day: ");
 		day = stdin.nextInt();
 		if (day <= 0 || day > 31) {
-			System.out.println("Bad Input");
+			System.out.println("Bad input.");
 			System.exit(-1);
 		}
 
 		System.out.print("Enter year: ");
 		year = stdin.nextInt();
 		if (year <= 1600) {
-			System.out.println("Bad Input");
+			System.out.println("Bad input.");
 			System.exit(-1);
 		}
 
@@ -68,7 +68,7 @@ public class PalindromicDate {
 							7).equals("r"))) {
 				monthNo = 10;
 			} else {
-				System.out.println("Bad Input");
+				System.out.println("Bad input.");
 				System.exit(-1);
 			}
 
@@ -92,7 +92,7 @@ public class PalindromicDate {
 							8).equals("R"))) {
 				monthNo = 11;
 				if (day == 31) {
-					System.out.println("Bad Input");
+					System.out.println("Bad input.");
 					System.exit(-1);
 				}
 			} else if ((month.substring(0, 1).equals("D") || month.substring(0,
@@ -131,11 +131,11 @@ public class PalindromicDate {
 				monthNo = 2;
 				if ((day == 28 && ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)))
 						|| (day == 29 && !((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)))) {
-					System.out.println("Bad Input");
+					System.out.println("Bad input.");
 					System.exit(-1);
 				}
 			} else {
-				System.out.println("Bad Input");
+				System.out.println("Bad input.");
 				System.exit(-1);
 			}
 
@@ -163,11 +163,11 @@ public class PalindromicDate {
 							5).equals("l"))) {
 				monthNo = 4;
 				if (day == 31) {
-					System.out.println("Bad Input");
+					System.out.println("Bad input.");
 					System.exit(-1);
 				}
 			} else {
-				System.out.println("Bad Input");
+				System.out.println("Bad input.");
 				System.exit(-1);
 			}
 
@@ -180,7 +180,7 @@ public class PalindromicDate {
 							3).equals("Y"))) {
 
 			} else {
-				System.out.println("Bad Input");
+				System.out.println("Bad input.");
 				System.exit(-1);
 			}
 
@@ -195,7 +195,7 @@ public class PalindromicDate {
 							4).equals("e"))) {
 				monthNo = 6;
 				if (day == 31) {
-					System.out.println("Bad Input");
+					System.out.println("Bad input.");
 					System.exit(-1);
 				}
 			} else if ((month.substring(0, 1).equals("J") || month.substring(0,
@@ -208,7 +208,7 @@ public class PalindromicDate {
 							4).equals("y"))) {
 				monthNo = 7;
 			} else {
-				System.out.println("Bad Input");
+				System.out.println("Bad input.");
 				System.exit(-1);
 			}
 
@@ -227,7 +227,7 @@ public class PalindromicDate {
 							6).equals("t"))) {
 				monthNo = 8;
 			} else {
-				System.out.println("Bad Input");
+				System.out.println("Bad input.");
 				System.exit(-1);
 			}
 
@@ -252,11 +252,11 @@ public class PalindromicDate {
 							9).equals("R"))) {
 				monthNo = 9;
 				if (day == 31) {
-					System.out.println("Bad Input");
+					System.out.println("Bad input.");
 					System.exit(-1);
 				}
 			} else {
-				System.out.println("Bad Input");
+				System.out.println("Bad input.");
 				System.exit(-1);
 			}
 
@@ -279,8 +279,11 @@ public class PalindromicDate {
 					+ Integer.toString(day) + "/"
 					+ (Integer.toString(year)).substring(2, 4);
 		} else {
-			System.out.println("Bad Input");
+			System.out.println("Bad input.");
 		}
+		
+		
+		System.out.println("Reformatted date: "+ reformatted);
 
 		if (reformatted.substring(0, 1).equals(reformatted.substring(7, 8))
 				&& reformatted.substring(1, 2).equals(
@@ -292,7 +295,7 @@ public class PalindromicDate {
 			System.out.println("Palindrome?: no");
 		}
 
-		System.out.println(reformatted);
+		
 
 	}
 

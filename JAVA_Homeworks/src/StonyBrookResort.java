@@ -34,12 +34,16 @@ public class StonyBrookResort {
 			discount = (vacationDays - 5) * 0.25 * EACHADULTPERDAY * adultsNo;
 		}
 
-		if (startDay.equals("Monday") && vacationDays <= 4
-				&& (adultsNo + childrenNo) > 1) {
-			discount = discount + 150;
+		if(startDay.length() == 6){
+			
+			if (((startDay.substring(0,1).equals("M")|| startDay.substring(0,1).equals("m")) && (startDay.substring(1,2).equals("o")|| startDay.substring(1,2).equals("O")) && (startDay.substring(2,3).equals("n")|| startDay.substring(2,3).equals("N")) && (startDay.substring(3,4).equals("D")|| startDay.substring(3,4).equals("d")) && (startDay.substring(4,5).equals("A")|| startDay.substring(4,5).equals("a") && (startDay.substring(5,6).equals("Y")|| startDay.substring(5,6).equals("y"))) && vacationDays <= 4
+					&& (adultsNo + childrenNo) > 1)) {
+				discount = discount + 150;
+
+			}
 
 		}
-
+			
 		if ((adultsNo + childrenNo) >= 6) {
 			serviceCharge = 0.05 * totalBefore;
 		}

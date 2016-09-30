@@ -1,0 +1,50 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+public class PrimeFactorization {
+
+	public static void main(String[] args) {
+		int num = 0;
+		int primePwr = 0;
+		int prime = 2;
+		int products = 1;
+		int count = 0;
+		
+		Scanner stdin = new Scanner(System.in);
+		System.out.print("Enter integers:");
+		String integers = stdin.nextLine();
+		String[] splited = integers.split(" ");
+		
+		for(int i =0 ; i< splited.length; i++){
+			//System.out.println(splited[i].length());
+			for(int j = 0; j< splited[i].length(); j++){
+				if((splited[i].charAt(j) >= '0' && splited[i].charAt(j)<= '9') || (splited[i].charAt(j)) == '-' ){
+					count ++;
+				}
+			}
+			//System.out.println(count);
+			if (count == splited[i].length()){
+				if(Integer.valueOf(splited[i]) > 0){
+					products = products * Integer.valueOf(splited[i]);
+				}else if (Integer.valueOf(splited[i]) < 0 && (splited.length - 1 != i)){
+					System.out.println("Bad Input");
+					System.exit(-1);
+				}
+			}else{
+				System.out.println("Bad Input");
+				System.exit(-1);
+			}
+			count = 0;
+				
+		}
+		System.out.println(products);
+		while(products % prime == 0){
+			products = products / prime;
+			primePwr ++;
+			
+		}
+		
+		
+		
+	}
+
+}
