@@ -87,7 +87,6 @@ public class RunLengthEncoding {
 			}
 		}
 		
-			System.out.print("Encoded: ");
 		for(int i = 0; i< fStr.size(); i++){
 			System.out.print(fStr.get(i));
 		}
