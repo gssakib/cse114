@@ -3,10 +3,8 @@ import java.util.ArrayList;
 
 public class RunLengthEncoding {
 	/*
-	 * Name: Gazi Sakib 
-	 * SBU ID - 109849940 
-	 * Course No. - CSE 114 
-	 * Assignment Name- : Part III: Run-length Encoding(Problem 3)(Homework 4)
+	 * Name: Gazi Sakib SBU ID - 109849940 Course No. - CSE 114 Assignment Name
+	 * - : Part III: Run-length Encoding(Problem 3)(Homework 4)
 	 */
 
 	public static void main(String[] args) {
@@ -51,13 +49,10 @@ public class RunLengthEncoding {
 					if (mssg.charAt(j) == tempLetter) {
 						countLtr++;
 					}
-					if(mssg.charAt(j) != tempLetter || j == (mssg.length()- 1)){
-						if (countLtr > 3) {
-							sameLtr.add(tempLetter);
-							multipleLtr.add(countLtr);
-							countLtr = 0;
-						
-						}
+					if (countLtr > 3 && mssg.charAt(j) != tempLetter) {
+						sameLtr.add(tempLetter);
+						multipleLtr.add(countLtr);
+						countLtr = 0;
 					}
 					if (mssg.charAt(j) != tempLetter) {
 						tempLetter = mssg.charAt(j);
@@ -72,7 +67,7 @@ public class RunLengthEncoding {
 
 		}
 
-		 //System.out.println(sameLtr.toString());
+		// System.out.println(sameLtr.toString());
 		// System.out.println(multipleLtr.toString());
 
 		int arraySpace = mssg.length();

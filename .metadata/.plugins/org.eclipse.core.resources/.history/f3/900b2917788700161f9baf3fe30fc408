@@ -72,9 +72,9 @@ public class RunLengthEncoding {
 
 		}
 
-		 //System.out.println(sameLtr.toString());
-		// System.out.println(multipleLtr.toString());
-
+		 System.out.println(sameLtr.toString());
+		 System.out.println(multipleLtr.toString());
+/*
 		int arraySpace = mssg.length();
 
 		for (int k = 0; k < multipleLtr.size(); k++) {
@@ -103,7 +103,7 @@ public class RunLengthEncoding {
 		for (int i = 0; i < fStr.size(); i++) {
 			System.out.print(fStr.get(i));
 		}
-
+*/
 	}
 
 }

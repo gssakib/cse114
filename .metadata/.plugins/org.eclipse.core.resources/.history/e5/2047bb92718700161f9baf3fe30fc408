@@ -3,12 +3,6 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class PrimeFactorization {
-	/*
-	 * Name: Gazi Sakib 
-	 * SBU ID - 109849940 
-	 * Course No. - CSE 114 
-	 * Assignment Name- : Part I: Prime Factorization(Problem 1)(Homework 4)
-	 */
 
 	public static void main(String[] args) {
 		int strdProduct = 0;
@@ -19,7 +13,7 @@ public class PrimeFactorization {
 		ArrayList primePwrArray = new ArrayList();
 		ArrayList primeArray = new ArrayList();
 		Scanner stdin = new Scanner(System.in);
-		System.out.print("Enter integers: ");
+		System.out.print("Enter integers:");
 		String integers = stdin.nextLine();
 		String[] splited = integers.split(" ");
 
@@ -38,11 +32,11 @@ public class PrimeFactorization {
 					products = products * Integer.valueOf(splited[i]);
 				} else if (Integer.valueOf(splited[i]) < 0
 						&& (splited.length - 1 != i)) {
-					System.out.println("Bad Input.");
+					System.out.println("Bad Input");
 					System.exit(-1);
 				}
 			} else {
-				System.out.println("Bad Input.");
+				System.out.println("Bad Input");
 				System.exit(-1);
 			}
 			count = 0;

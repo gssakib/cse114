@@ -72,8 +72,8 @@ public class RunLengthEncoding {
 
 		}
 
-		 //System.out.println(sameLtr.toString());
-		// System.out.println(multipleLtr.toString());
+		 System.out.println(sameLtr.toString());
+		 System.out.println(multipleLtr.toString());
 
 		int arraySpace = mssg.length();
 

@@ -38,11 +38,11 @@ public class PrimeFactorization {
 					products = products * Integer.valueOf(splited[i]);
 				} else if (Integer.valueOf(splited[i]) < 0
 						&& (splited.length - 1 != i)) {
-					System.out.println("Bad Input.");
+					System.out.println("Bad Input");
 					System.exit(-1);
 				}
 			} else {
-				System.out.println("Bad Input.");
+				System.out.println("Bad Input");
 				System.exit(-1);
 			}
 			count = 0;
