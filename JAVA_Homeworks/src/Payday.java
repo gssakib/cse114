@@ -3,8 +3,10 @@ import java.util.Scanner;
 public class Payday {
 
 	/*
-	 * Name: Gazi Sakib SBU ID - 109849940 Course No. - CSE 114 Assignment Name
-	 * - : Managed Chaos (Problem 3)(Homework 3)
+	 * Name: Gazi Sakib 
+	 * SBU ID - 109849940 
+	 * Course No. - CSE 114 
+	 * Assignment Name- : Managed Chaos (Problem 3)(Homework 3)
 	 */
 
 	public static void main(String[] args) {

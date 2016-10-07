@@ -1,0 +1,26 @@
+
+public class Homework5Methods {
+	
+	// part 1
+		public static String eliminateDuplicates(String str) {
+			StringBuffer sentence = new StringBuffer(str);
+			for(int i = 1; i < sentence.length(); i++){
+				
+				for(int j = 0; j < i; j++){
+					
+					if (sentence.charAt(i) == str.charAt(j)){
+						//sentence.delete(i, i+1);
+					}
+					
+				}
+				
+				
+				
+				
+			}
+			return sentence.toString();
+		}
+	
+	
+
+}

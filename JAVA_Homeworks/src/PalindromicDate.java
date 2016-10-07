@@ -4,8 +4,10 @@ public class PalindromicDate {
 
 	public static void main(String[] args) {
 		/*
-		 * Name: Gazi Sakib SBU ID - 109849940 Course No. - CSE 114 Assignment
-		 * Name - : Time Flies When You’re Having Fun (Problem 1)(Homework 3)
+		 * Name: Gazi Sakib 
+		 * SBU ID - 109849940 
+		 * Course No. - CSE 114 
+		 * Assignment Name - : Time Flies When You’re Having Fun (Problem 1)(Homework 3)
 		 */
 
 		Scanner stdin = new Scanner(System.in);
@@ -290,9 +292,9 @@ public class PalindromicDate {
 						reformatted.substring(6, 7))
 				&& reformatted.substring(3, 4).equals(
 						reformatted.substring(4, 5))) {
-			System.out.println("Palindrome?: yes");
+			System.out.println("Palindrome? yes");
 		} else {
-			System.out.println("Palindrome?: no");
+			System.out.println("Palindrome? no");
 		}
 
 		

@@ -3,8 +3,10 @@ import java.util.Scanner;
 public class StonyBrookResort {
 
 	/*
-	 * Name: Gazi Sakib SBU ID - 109849940 Course No. - CSE 114 Assignment Name
-	 * - : What A View! Wait, What’s That Smell? (Problem 2)(Homework 3)
+	 * Name: Gazi Sakib 
+	 * SBU ID - 109849940 
+	 * Course No. - CSE 114 
+	 * Assignment Name - : What A View! Wait, What’s That Smell? (Problem 2)(Homework 3)
 	 */
 
 	public static void main(String[] args) {
@@ -53,7 +55,7 @@ public class StonyBrookResort {
 		System.out.printf("Total before discounts: $%.2f%n", totalBefore);
 		System.out.printf("Discounts: $%.2f%n", discount);
 		System.out.printf("Service charges: $%.2f%n", serviceCharge);
-		System.out.printf("Grand Total: $%.2f%n", totalAfter);
+		System.out.printf("Grand total: $%.2f%n", totalAfter);
 
 	}
 
