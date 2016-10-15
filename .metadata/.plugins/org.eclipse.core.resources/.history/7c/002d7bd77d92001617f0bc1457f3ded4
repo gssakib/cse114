@@ -32,7 +32,7 @@ public class Homework5Driver {
 		
 		
 		//System.out.println("Part 3:");
-		int base;
+		//int base;
 		//base = Homework5Methods.lowestBasePalindrome(100);
 		//System.out.println(base);
 		//base = Homework5Methods.lowestBasePalindrome(917);
@@ -56,13 +56,13 @@ public class Homework5Driver {
 		
 		
 		
-		//System.out.println("Part 5:");
-		//int[][] nums2D = new int[][]{ {1,2,3}, {-1,-2,-3,-4,-5}, {6,7,8,9}, {10, 11} };
+		System.out.println("Part 5:");
+		int[][] nums2D = new int[][]{ {1,2,3}, {-1,-2,-3,-4,-5}, {6,7,8,9}, {10, 11} };
 		
 		//Homework5Methods.rotateRight(nums2D, 2);
-		//int[][] nums2D = new int[][]{ {1,2,3}, {-1,-2,-3,-4,-5}, {6,7,8,9}, {10, 11} };
+		//nums2D = new int[][]{ {1,2,3}, {-1,-2,-3,-4,-5}, {6,7,8,9}, {10, 11} };
 		//Homework5Methods.rotateRight(nums2D, 7);
-		//int[][]nums2D = new int[][]{ {1,2,3}, {-1,-2,-3,-4,-5}, {6,7,8,9}, {10, 11} };
+		//nums2D = new int[][]{ {1,2,3}, {-1,-2,-3,-4,-5}, {6,7,8,9}, {10, 11} };
 		//Homework5Methods.rotateRight(nums2D, -1);
 		
 		

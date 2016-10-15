@@ -11,6 +11,8 @@ import java.util.Arrays;
  * Part IV: Promenade Two-by-Two
  */
 
+
+
 public class Homework5Methods {
 
 	// part 1
@@ -118,7 +120,7 @@ public class Homework5Methods {
 					for (int j = 0; j < stride; j++, k++, n++) {
 						arry[k] = array2[n];
 					}
-
+					// System.out.println(n);
 				}
 
 				for (; m < array1.length; m++, k++) {
@@ -129,6 +131,7 @@ public class Homework5Methods {
 					arry[k] = array2[n];
 				}
 
+				// System.out.println("lala");
 				int[] result1 = new int[array1.length + array2.length];
 				for (int i = 0; i < result1.length; i++) {
 					result1[i] = arry[i];
@@ -146,7 +149,7 @@ public class Homework5Methods {
 					for (int j = 0; j < stride; j++, k++, n++) {
 						arry[k] = array2[n];
 					}
-
+					// System.out.println(n);
 				}
 				for (; m < array1.length; m++, k++) {
 					arry[k] = array1[m];
@@ -163,7 +166,7 @@ public class Homework5Methods {
 				return result1;
 
 			} else {
-
+				// System.out.println("lala");
 				for (; m < array1.length / stride;) {
 
 					for (int i = 0; i < stride; i++, k++, m++) {
@@ -173,6 +176,7 @@ public class Homework5Methods {
 					for (int j = 0; j < stride; j++, k++, n++) {
 						arry[k] = array2[n];
 					}
+					// System.out.println(n);
 
 				}
 				for (; m < array1.length; m++, k++) {
@@ -368,20 +372,20 @@ public class Homework5Methods {
 
 		}
 
-		for (int i = 0; i < matrix.length; i++) {
-
-			for (int j = 0; j < matrix[i].length; j++) {
-
-				System.out.print(matrix[i][j]);
-				System.out.print(" ");
-
-			}
-			System.out.println("");
-		}
-
+		
+		  for(int i =0; i< matrix.length; i++){
+		  
+			  
+		  for(int j= 0; j< matrix[i].length; j++){
+		  
+		  System.out.print(matrix[i][j]); System.out.print(" ");
+		  
+		  } System.out.println(""); }
+		 
 	}
-
-	// extra methods used in part3
+	
+	
+	
 	public static String decimal2Xbase(String val, int baseNo) {
 		int count = 0;
 		int rem = 0;
@@ -419,5 +423,15 @@ public class Homework5Methods {
 		return converted;
 
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

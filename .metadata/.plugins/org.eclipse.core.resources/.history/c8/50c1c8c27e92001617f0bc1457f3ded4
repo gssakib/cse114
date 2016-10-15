@@ -33,8 +33,8 @@ public class Homework5Driver {
 		
 		//System.out.println("Part 3:");
 		int base;
-		//base = Homework5Methods.lowestBasePalindrome(100);
-		//System.out.println(base);
+		base = Homework5Methods.lowestBasePalindrome(100);
+		System.out.println(base);
 		//base = Homework5Methods.lowestBasePalindrome(917);
 		//System.out.println(base);
 		//base = Homework5Methods.lowestBasePalindrome(977);
