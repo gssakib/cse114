@@ -1,25 +1,18 @@
 public class CarRepairShop {
 	Car[] repairCar = new Car[100];
-	int countCars = 0;
+	int countIndex = -1;
 	public int addNewCar(String vin, String make, int year) {
 		
 		Car temp = new Car(vin, make, year);
-		for(int i = 0; i < countCars; i++){
+		for(int i = 0; i < repairCar.length; i++){
 			if(repairCar[i].equals(temp)){
 				return -1;
 			}
 		}
-		if(countCars + 1 == repairCar.length){
-			Car[] dummyRef = new Car[2*repairCar.length];
-			for(int i = 0; i < repairCar.length; i++){
-				dummyRef[i] = repairCar[i];
-			}
-			repairCar = dummyRef;
-		}
 		
-		repairCar[countCars++] = temp;
-		//System.out.println(repairCar[countCars-1].getVin());
-		return countCars;
+		countIndex++;
+		repairCar[countIndex] = temp;
+		return countIndex++;
 	}
 	
 	public int addRepairTicket(String vin, double cost, String description) {

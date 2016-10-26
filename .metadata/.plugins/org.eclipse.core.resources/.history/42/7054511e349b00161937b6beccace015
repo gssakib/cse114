@@ -9,16 +9,13 @@ public class CarRepairShop {
 				return -1;
 			}
 		}
-		if(countCars + 1 == repairCar.length){
-			Car[] dummyRef = new Car[2*repairCar.length];
-			for(int i = 0; i < repairCar.length; i++){
-				dummyRef[i] = repairCar[i];
-			}
-			repairCar = dummyRef;
+		if(countCars + 1 > 100){
+			
+			
 		}
 		
 		repairCar[countCars++] = temp;
-		//System.out.println(repairCar[countCars-1].getVin());
+		System.out.println(repairCar[countCars-1].getVin());
 		return countCars;
 	}
 	

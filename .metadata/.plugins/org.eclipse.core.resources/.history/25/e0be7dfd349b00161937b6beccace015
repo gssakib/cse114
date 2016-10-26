@@ -18,7 +18,7 @@ public class CarRepairShop {
 		}
 		
 		repairCar[countCars++] = temp;
-		//System.out.println(repairCar[countCars-1].getVin());
+		System.out.println(repairCar[countCars-1].getVin());
 		return countCars;
 	}
 	
