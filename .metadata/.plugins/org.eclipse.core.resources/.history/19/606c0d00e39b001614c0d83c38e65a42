@@ -2,7 +2,7 @@ public class CarRepairShop {
 	Car[] repairCar = new Car[100];
 	int countCars = 0;
 	
-	Ticket[] repairTicket = new Ticket[1];
+	Ticket[] repairTicket = new Ticket[10000000];
   	int ticketNo = 0;
 	
 	public int addNewCar(String vin, String make, int year) {
@@ -77,112 +77,38 @@ public class CarRepairShop {
 	              
 	              sum += repairTicket[i].getCost();
 	              
+	            }else{
+	              
+	             	return -1; 
 	            }
 	            
 	          }
-	       if(sum == 0){
-	    	   return -1.0;
-	       }else{
-	    	   return sum;
-	       }
+	          
 	          
 	          
 	      
 	        
-	       
+	        
+	      
+	      return sum;
 		
 	}
 
 	public String getWorstCarMake() {
-		int biggestCountIndex = 0;
-		String maxVin = "";
-		int[] arryCount = new int[ticketNo];
-		
-		
-		if(countCars == 0 || ticketNo == 0){
-			return null;
-		}
-	     for(int i =0; i< ticketNo;i++){
-	            int wCount = 0; 
-	            for(int j = 0; j < ticketNo; j++ ){
-	            	if(repairTicket[i].getVin().equals(repairTicket[j].getVin()))
-	            	wCount ++;
-	            }
-	            arryCount[i] = wCount;
-	    	  
-	           
-	            
-	      }
-	      
-	      for(int i = 1; i < arryCount.length; i++ ){
-	    	  if(arryCount[i] > arryCount[i-1]){
-	    		  biggestCountIndex = i;
-	    	  }
-	    	  
-	    	  
-	      }
-	      
-	         
-	      maxVin = repairTicket[biggestCountIndex].getVin();
-	        for(int i = 0; i < repairCar.length; i++){
-	        	if(repairCar[i].getVin().equals(maxVin)){
-	        		return repairCar[i].getMake();
-	        	}
-	        	
-	        }
-	        
-	      
-	      return null;
+		return "Go-Kart";
 	}
 	
 	public boolean updateRepairCost(int ticketNum, double newCost) {
-		for(int i = 0; i < ticketNo; i++){
-			if(ticketNum == i+1){
-				
-				repairTicket[i].setCost(newCost);
-				return true;
-			}
-			
-		}
-		
 		return false;
 	}
 	
 	public boolean deleteRepair(int ticketNum) {
-		
-		for(int i = 0; i < ticketNo; i++){
-			if(ticketNum == i+1){
-				for(int j = i+1; j< ticketNo; j ++){
-					repairTicket[j-1] = repairTicket[j];
-				}
-			ticketNo --;
-			return true;
-			}
-			
-		}
 		return false;
 	}
 	
 	public boolean deleteAllRepairsForCar(String VIN) {
-		int count = 0;
-		for(int i = 0; i< ticketNo; i++){
-			if(repairTicket[i].getVin().equals(VIN)){
-				for(int j = i+1; j< ticketNo; j ++){
-					repairTicket[j-1] = repairTicket[j];
-				}
-			ticketNo --;
-			count++;
-			
-			}
-		}
-	
-		if(count > 0){
-			return true;
-		}else{
-			return false;
-		}
+		return false;
 	}
-	
 	
 	public boolean deleteCarAndRepairs(String VIN) {
 		return false;
@@ -222,9 +148,6 @@ class Ticket{
   
   }
 
-   	public void setCost(double cost){
-   		this.cost = cost;
-   	}
 
 
  public String getDes(){
@@ -256,9 +179,7 @@ class Car{
 		
 	}
 	
-	public String getMake(){
-		return make;
-	}
+	
 	
 	
 	

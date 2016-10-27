@@ -77,19 +77,20 @@ public class CarRepairShop {
 	              
 	              sum += repairTicket[i].getCost();
 	              
+	            }else{
+	              
+	             	return -1; 
 	            }
 	            
 	          }
-	       if(sum == 0){
-	    	   return -1.0;
-	       }else{
-	    	   return sum;
-	       }
+	          
 	          
 	          
 	      
 	        
-	       
+	        
+	      
+	      return sum;
 		
 	}
 
@@ -136,53 +137,16 @@ public class CarRepairShop {
 	}
 	
 	public boolean updateRepairCost(int ticketNum, double newCost) {
-		for(int i = 0; i < ticketNo; i++){
-			if(ticketNum == i+1){
-				
-				repairTicket[i].setCost(newCost);
-				return true;
-			}
-			
-		}
-		
 		return false;
 	}
 	
 	public boolean deleteRepair(int ticketNum) {
-		
-		for(int i = 0; i < ticketNo; i++){
-			if(ticketNum == i+1){
-				for(int j = i+1; j< ticketNo; j ++){
-					repairTicket[j-1] = repairTicket[j];
-				}
-			ticketNo --;
-			return true;
-			}
-			
-		}
 		return false;
 	}
 	
 	public boolean deleteAllRepairsForCar(String VIN) {
-		int count = 0;
-		for(int i = 0; i< ticketNo; i++){
-			if(repairTicket[i].getVin().equals(VIN)){
-				for(int j = i+1; j< ticketNo; j ++){
-					repairTicket[j-1] = repairTicket[j];
-				}
-			ticketNo --;
-			count++;
-			
-			}
-		}
-	
-		if(count > 0){
-			return true;
-		}else{
-			return false;
-		}
+		return false;
 	}
-	
 	
 	public boolean deleteCarAndRepairs(String VIN) {
 		return false;
@@ -222,9 +186,6 @@ class Ticket{
   
   }
 
-   	public void setCost(double cost){
-   		this.cost = cost;
-   	}
 
 
  public String getDes(){
