@@ -11,24 +11,14 @@ public class CarRepairShop {
 		
 		Car temp = new Car(vin, make, year);
 		for(int i = 0; i < countCars; i++){
-			try{
-				if(repairCar[i].getVin().equals(temp.getVin())){
-					return -1;
-				}
-			}catch(NullPointerException e){
-				continue;
+			if(repairCar[i].getVin().equals(temp.getVin())){
+				return -1;
 			}
-			
 		}
 		if(countCars + 1 == repairCar.length){
 			Car[] dummyRef = new Car[2*repairCar.length];
 			for(int i = 0; i < repairCar.length; i++){
-				try{
-					dummyRef[i] = repairCar[i];
-				}catch(NullPointerException e){
-					continue;
-				}
-				
+				dummyRef[i] = repairCar[i];
 			}
 			repairCar = dummyRef;
 		}
@@ -44,27 +34,18 @@ public class CarRepairShop {
 		if(ticketNo + 1 == repairTicket.length){
 			Ticket[] dummyRef = new Ticket[2*repairTicket.length];
 			for(int i = 0; i < repairTicket.length; i++){
-				try{
-					dummyRef[i] = repairTicket[i];
-				}catch(NullPointerException e){
-					continue;
-				}
-				
+				dummyRef[i] = repairTicket[i];
 			}
 			repairTicket = dummyRef;
 		}
 		
 		
 		for(int i = 0; i< countCars; i++){
-	        try{
-	        	if(repairCar[i].getVin().equals(vin)){
-		         	vinMatch ++; 
-		          
-		        }
-	        }catch(NullPointerException e){
-	        	continue;
-	        }
 	        
+	        if(repairCar[i].getVin().equals(vin)){
+	         	vinMatch ++; 
+	          
+	        }
 	        
 	      }
 		
@@ -175,14 +156,9 @@ public class CarRepairShop {
 	         
 	      maxVin = repairTicket[biggestCountIndex].getVin();
 	        for(int i = 0; i < repairCar.length; i++){
-	        	try{
-	        		if(repairCar[i].getVin().equals(maxVin)){
-		        		return repairCar[i].getMake();
-		        	}
-	        	}catch(NullPointerException e){
-	        		continue;
+	        	if(repairCar[i].getVin().equals(maxVin)){
+	        		return repairCar[i].getMake();
 	        	}
-	        
 	        	
 	        }
 	        
@@ -259,33 +235,7 @@ public class CarRepairShop {
 	
 	
 	public boolean deleteCarAndRepairs(String VIN) {
-		boolean condition = false;
-		boolean dummy = false;
-	for(int i = 0; i < countCars; i++){
-			
-			try{
-				if(VIN.equals(repairCar[i].getVin())){
-					repairCar[i] = null;
-					
-				condition = true;
-				}
-				
-			}catch(NullPointerException e){
-				continue;
-				
-			}
-			
-			
-			
-			
-			
-		}
-		dummy = deleteAllRepairsForCar(VIN);
-		if(condition == true){
-			return condition;
-		}else{
-			return condition;
-		}
+		return false;
 	}
 	
 }

@@ -44,27 +44,18 @@ public class CarRepairShop {
 		if(ticketNo + 1 == repairTicket.length){
 			Ticket[] dummyRef = new Ticket[2*repairTicket.length];
 			for(int i = 0; i < repairTicket.length; i++){
-				try{
-					dummyRef[i] = repairTicket[i];
-				}catch(NullPointerException e){
-					continue;
-				}
-				
+				dummyRef[i] = repairTicket[i];
 			}
 			repairTicket = dummyRef;
 		}
 		
 		
 		for(int i = 0; i< countCars; i++){
-	        try{
-	        	if(repairCar[i].getVin().equals(vin)){
-		         	vinMatch ++; 
-		          
-		        }
-	        }catch(NullPointerException e){
-	        	continue;
-	        }
 	        
+	        if(repairCar[i].getVin().equals(vin)){
+	         	vinMatch ++; 
+	          
+	        }
 	        
 	      }
 		
@@ -175,14 +166,9 @@ public class CarRepairShop {
 	         
 	      maxVin = repairTicket[biggestCountIndex].getVin();
 	        for(int i = 0; i < repairCar.length; i++){
-	        	try{
-	        		if(repairCar[i].getVin().equals(maxVin)){
-		        		return repairCar[i].getMake();
-		        	}
-	        	}catch(NullPointerException e){
-	        		continue;
+	        	if(repairCar[i].getVin().equals(maxVin)){
+	        		return repairCar[i].getMake();
 	        	}
-	        
 	        	
 	        }
 	        

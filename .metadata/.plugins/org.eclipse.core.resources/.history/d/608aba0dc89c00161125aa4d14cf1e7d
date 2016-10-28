@@ -175,14 +175,9 @@ public class CarRepairShop {
 	         
 	      maxVin = repairTicket[biggestCountIndex].getVin();
 	        for(int i = 0; i < repairCar.length; i++){
-	        	try{
-	        		if(repairCar[i].getVin().equals(maxVin)){
-		        		return repairCar[i].getMake();
-		        	}
-	        	}catch(NullPointerException e){
-	        		continue;
+	        	if(repairCar[i].getVin().equals(maxVin)){
+	        		return repairCar[i].getMake();
 	        	}
-	        
 	        	
 	        }
 	        
