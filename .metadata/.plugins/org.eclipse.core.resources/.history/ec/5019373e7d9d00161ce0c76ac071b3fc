@@ -329,7 +329,7 @@ class Car {
 		return make;
 	}
 
-	public int getYear() {
+	public String getYear() {
 		return year;
 	}
 }

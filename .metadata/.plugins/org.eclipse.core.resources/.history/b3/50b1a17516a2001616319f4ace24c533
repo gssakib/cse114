@@ -1,0 +1,118 @@
+
+public class DessertCafe {
+
+	public static void main(String[] args) {
+		
+		Dessert[] desserts = new Dessert[3];
+		Cake cake1 = new Cake("Chocolate-Chip", 3);
+		Cake cake2 = new Cake("Vanilla", 2);
+		Cake cake3 = new Cake("Mixed", 16);
+		
+		desserts[0] = cake1;
+		desserts[1] = cake2;
+		desserts[2] = cake3;
+		
+		for(int i = 0; i< desserts.length; i++){
+			
+			System.out.println(desserts[i].getName()+ " " + desserts[i].getCost());
+			
+			
+		}
+		
+	}
+
+}
+
+
+class Dessert{
+	private String name;
+	private int cost;
+	public Dessert(String name, int cost){
+		this.name = name;
+		this.cost = cost;
+	}
+	
+	
+	public String getName(){
+		return this.name;
+		
+	}
+	
+	public int getCost(){
+		
+		return this.cost;
+		
+	}
+	
+}	
+	
+class Cake extends Dessert{
+	
+	private int layer;
+	public Cake(String name, int layer){
+		super(name, 15);
+		this.layer = layer;
+		
+	}
+	
+	public String getName(){
+		return super.getName();
+	}
+	
+	public int getCost(){
+		return (super.getCost() + 2*this.layer);
+	}
+	
+	
+	public String toString(){
+		
+		return super.getName() + " is " + " $ " + this.getCost();
+	}
+	
+	public boolean equals(Object object){
+		
+		if(object instanceof Cake){
+			return ((Cake)object).getCost() == this.getCost()&& ((Cake)object).getName() == this.getName() ;
+			
+		}else{
+			
+			return false;
+		}
+		
+		
+	}
+	
+}
+
+class CookiePack extends Dessert{
+	private int noCookies;
+	public CookiePack(String name, int costPer, int noCookies){
+		super(name, costPer);
+		this.noCookies = noCookies;
+		
+	}
+	
+	
+	public String getName(){
+		
+		return super.getName();
+	}
+	
+	public int getCost(){
+		
+		return (super.getCost()*this.noCookies);
+	}
+	}
+	
+	
+	
+	
+	
+}
+	
+	
+	
+	
+	
+	
+	
