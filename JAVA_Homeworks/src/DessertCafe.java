@@ -10,22 +10,37 @@ public class DessertCafe {
 		desserts[0] = cake1;
 		desserts[1] = cake2;
 		
-		CookiePack cookiePack = new CookiePack("")
+		CookiePack cookiePack1 = new CookiePack("CookiePack1",5,2);
+		CookiePack cookiePack2 = new CookiePack("CookiePack2",10,4);
+		desserts[2] = cookiePack1;
+		desserts[3] = cookiePack2;
 		
+		IceCream iceCream1 = new IceCream(5);
+		IceCream iceCream2 = new IceCream(10);
+		desserts[4] = iceCream1;
+		desserts[5] = iceCream2;
+		
+		Sundae sundae1 = new Sundae(4,1);
+		Sundae sundae2 = new Sundae(5,5);
+		desserts[6] = sundae1;
+		desserts[7] = sundae2;
 		
 		for(int i = 0; i< desserts.length; i++){
 			
-			System.out.println(desserts[i].getName()+ " " + desserts[i].getCost());
-			
+			System.out.println(desserts[i].getName()+ ": $" + desserts[i].getCost());
+			//System.out.println(desserts[i].toString());
 			
 		}
+		
+		System.out.println(desserts[5].equals(desserts[7]));
+		
 		
 	}
 
 }
 
 
-class Dessert{
+abstract class  Dessert{
 	private String name;
 	private int cost;
 	public Dessert(String name, int cost){
@@ -166,7 +181,7 @@ class IceCream extends Dessert{
 		
 	}
 	
-	
+}	
 class Sundae extends IceCream{
 	
 	private int topping;
@@ -175,7 +190,10 @@ class Sundae extends IceCream{
 		super("Sundae", cost);
 		this.topping = topping;
 	}
-	
+	public Sundae(String name,int cost, int topping){
+		super(name, cost);
+		this.topping = topping;
+	}
 	public String getName(){
 		
 		return super.getName();
@@ -196,7 +214,7 @@ class Sundae extends IceCream{
 	
 	public boolean equals(Object object){
 		
-		if(object instanceof CookiePack){
+		if(object instanceof Sundae){
 			return ((Sundae)object).getCost() == this.getCost()&& ((Sundae)object).getName() == this.getName() ;
 			
 		}else{
@@ -210,7 +228,7 @@ class Sundae extends IceCream{
 }
 	
 	
-}
+
 	
 	
 	
