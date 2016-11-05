@@ -1,0 +1,34 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.Scanner;
+public class ReformatCode {
+
+	public static void main(String[] args) throws FileNotFoundException {
+		File in = new File(args[0]);
+	    File out = new File(args[1]);
+	    
+	    
+	    
+	    String[] splits = args[0].split(".");
+	    //System.out.println(splits[0]);
+		
+		Scanner	infile = new Scanner(in);
+		PrintWriter	outfile = new PrintWriter(out);
+		
+			
+			
+	    
+	    
+	      
+	      
+	      
+	    while(infile.hasNext()){
+	      outfile.println(infile.nextLine());
+
+	    }
+	    infile.close();
+	    outfile.close();
+
+}
+}

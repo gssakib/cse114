@@ -1,0 +1,75 @@
+public class HexBinDec {
+
+	public static void main(String[] args) {
+		try{
+			System.out.println(hex2Dec("-4354abff"));
+		}catch(HexFormatException ex){
+			ex.printStackTrace();
+		}
+
+	}
+	
+	
+	public static int hex2Dec (String hexString) throws HexFormatException{
+		
+		int result = 0;
+		for(int i = 0; i < hexString.length(); i++){
+			if(hexString.charAt(i) >= '0' && hexString.charAt(i) <= '9'){
+				result = result + (int)((Character.getNumericValue(hexString.charAt(i)))*Math.pow(16, (hexString.length() -1 -i)));
+				
+			}else if(hexString.charAt(i) >= 'A' && hexString.charAt(i) <= 'Z'){
+				result = result + (int)((10 + hexString.charAt(i) - 'A')* (Math.pow(16, (hexString.length() -1 -i))));
+				
+			}else if(hexString.charAt(i) >= 'a' && hexString.charAt(i) <= 'z'){
+				
+				result = result + (int)((10 + ((char)(hexString.charAt(i) - 32)) - 'A')* (Math.pow(16, (hexString.length() -1 -i))));
+				
+				
+			}else{
+				throw new HexFormatException();
+				
+			}
+			
+		}
+		
+		return result;
+		
+		
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class BinaryFormatException extends Exception{
+	public BinaryFormatException(){
+		super("Invalid Formatted binary number");
+	}
+	
+	
+}
+
+
+class HexFormatException extends Exception{
+	public HexFormatException(){
+		super("Invalid Formatted hexadecimal number");
+	}
+	
+}
+
+
+
