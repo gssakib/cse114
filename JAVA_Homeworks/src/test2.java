@@ -1,11 +1,8 @@
-public class test{
+public class test2{
     public static void main(String [] args){
-        if(true){
-            
-        }
-        else{
-            
-        }
+    	int[] x = new int[3];
+    	x[0]++;
+        System.out.println(x[0]);
     }
 }
 

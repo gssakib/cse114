@@ -1,0 +1,54 @@
+
+public class Scrimish {
+
+	public static void main(String[] args) {
+		Dagger c1 = new Dagger();
+		
+		System.out.println(c1.getName());
+
+	}
+
+	
+	public void setUp(){
+		//implement setting up
+	}
+	
+	public void gamePlay(){
+		
+		//implement the gameplay
+	}
+}
+
+
+
+abstract class Cards{
+	private String name = "";
+	
+	public Cards(String name){
+		this.name = name;
+	}
+	
+	
+	public void setName(String name){
+		name = this.name;
+	}
+	
+	
+	
+	public String getName(){
+		return this.name;
+	}
+		
+}
+
+
+
+class Dagger extends Cards{
+	private int val;
+	
+	public Dagger(){
+		super("Dagger");
+		this.val = 1;
+	}
+	
+}

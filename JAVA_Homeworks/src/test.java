@@ -1,14 +1,7 @@
-public class test
-{
+public class test{
     public static void main(String [] args)
     {
-        if(true)
-        {
-            
-        }
-        else
-        {
-            
-        }
+        int[] x = new int[3];
+        System.out.println(x[0]);
     }
 }
