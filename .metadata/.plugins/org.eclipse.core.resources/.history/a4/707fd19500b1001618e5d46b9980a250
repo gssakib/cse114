@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Scrimish {
 
 	public static void main(String[] args) {
-		Cards[][] computer = setUpAI();
+		//Cards[][] computer = setUpAI();
 		Cards[][] person = setUp();
 		/*
 		for(int i = 0; i< computer.length; i++){
@@ -136,29 +136,20 @@ public class Scrimish {
 	
 	
 	
-	public void gamePlay(Cards[][] person, Cards[][] computer){
+	public void gamePlay(){
 		
 		//implement the gameplay
-		
 		//if toggle is 1
-			//while crown card is not attacked
-				//attack logic of player1
-					//player 1 starts by picking 
-					//choose card from top of one of my piles. 
-					//choose card from top of one of opponents files. 
-					//cards are printed and values compared to. 
-					//cards are treated according to constraints
-		
-				//attack logic of ai 
-					//ai starts by picking 
-					//choose card from top of one of my piles. 
-					//choose card from top of one of opponents files.
-					//cards are printed and values compared to.
-					//cards are treated according to constraints
+			//attack logic
+			//player 1 starts by picking 
+				//choose card from top of one of my piles. 
+				//choose card from top of one of opponents files. 
 		
 		
-		
-		
+			//defend logic
+			//ai starts by picking 
+				//choose card from top of one of my piles. 
+				//choose card from top of one of opponents files.
 		
 		//if toggle is -1
 			//computer starts by picking
