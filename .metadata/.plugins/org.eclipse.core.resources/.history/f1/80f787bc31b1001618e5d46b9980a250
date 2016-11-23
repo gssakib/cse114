@@ -15,8 +15,6 @@ public class Scrimish {
 		
 		}
 		
-		System.out.println("");
-		System.out.println("");
 		
 		for(int i = 0; i< computer.length; i++){
 			System.out.println("");
@@ -25,7 +23,6 @@ public class Scrimish {
 			}
 		}
 		
-		System.out.println("");
 		System.out.println("");
 		gamePlay(person,computer, 1);
 		//System.out.println(c1.getVal());
@@ -197,7 +194,7 @@ public class Scrimish {
 				}while(status);
 				
 				
-				System.out.println("The attacking card is: " + player1[player1I][player1J].getName());
+				System.out.println(player1[player1I][player1J].getName());
 				
 				//choose card from top of one of opponents files. 
 				
@@ -229,36 +226,12 @@ public class Scrimish {
 				}while(status);
 				
 				
-				System.out.println("The defending card is: " +player2[player2I][player2J].getName());
+				System.out.println(player2[player2I][player2J].getName());
 				
 				
-				//cards are printed and values compared to. 
-				//cards are treated according to constraints
 				
-				if(player1[player1I][player1J].getAttackVal() > player2[player2I][player2J].getDefVal() && !(player1[player1I][player1J].getName().equals("Sheild")) && !(player1[player1I][player1J].getName().equals("Crown")) && !(player2[player2I][player2J].getName().equals("Sheild"))){
-					if(player2[player2I][player2J].getName().equals("Crown")){
-						System.out.println("Player 1 Wins");
-						System.exit(0);
-					}
-					player2[player2I][player2J].setName("Destroyed");
-					player2[player2I][player2J].setAttackVal(-100);
-					player2[player2I][player2J].setDefVal(-100);
-					
-					
-				}else if(player1[player1I][player1J].getAttackVal() < player2[player2I][player2J].getDefVal()){
-					player1[player1I][player1J].setName("Destroyed");
-					player1[player1I][player1J].setAttackVal(-100);
-					player1[player1I][player1J].setDefVal(-100);
-				}else{
-					
-					
-					
-					
-					
-					
-					
-					
-				}
+				
+				
 				
 				
 				

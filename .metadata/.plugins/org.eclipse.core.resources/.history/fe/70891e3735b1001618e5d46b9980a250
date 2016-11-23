@@ -235,28 +235,11 @@ public class Scrimish {
 				//cards are printed and values compared to. 
 				//cards are treated according to constraints
 				
-				if(player1[player1I][player1J].getAttackVal() > player2[player2I][player2J].getDefVal() && !(player1[player1I][player1J].getName().equals("Sheild")) && !(player1[player1I][player1J].getName().equals("Crown")) && !(player2[player2I][player2J].getName().equals("Sheild"))){
-					if(player2[player2I][player2J].getName().equals("Crown")){
-						System.out.println("Player 1 Wins");
-						System.exit(0);
-					}
+				if(player1[player1I][player1J].getAttackVal() > player2[player2I][player2J].getDefVal()){
 					player2[player2I][player2J].setName("Destroyed");
-					player2[player2I][player2J].setAttackVal(-100);
-					player2[player2I][player2J].setDefVal(-100);
+				}else if(player1[player1I][player1J].getAttackVal() == player2[player2I][player2J].getDefVal()){
 					
-					
-				}else if(player1[player1I][player1J].getAttackVal() < player2[player2I][player2J].getDefVal()){
-					player1[player1I][player1J].setName("Destroyed");
-					player1[player1I][player1J].setAttackVal(-100);
-					player1[player1I][player1J].setDefVal(-100);
 				}else{
-					
-					
-					
-					
-					
-					
-					
 					
 				}
 				
