@@ -243,11 +243,11 @@ public class Scrimish {
 					}
 					
 					
-					
+					System.out.println("lalalalal");
 					player2[player2I][player2J].setName("Destroyed");
 					player2[player2I][player2J].setAttackVal(-100);
 					player2[player2I][player2J].setDefVal(-100);
-					
+					System.out.println("The defending card after attack is: " +player2[player2I][player2J].getName());
 					
 				}else if(player1[player1I][player1J].getAttackVal() < player2[player2I][player2J].getDefVal() && !(player1[player1I][player1J].getName().equals("Sheild")) && !(player2[player2I][player2J].getName().equals("Sheild"))){
 					//if you attack with you crown card your opponents non-crown cards then you lose
@@ -405,7 +405,7 @@ abstract class Cards{
 	
 	
 	public void setName(String name){
-		this.name = name;
+		name = this.name;
 	}
 	
 	public String getName(){

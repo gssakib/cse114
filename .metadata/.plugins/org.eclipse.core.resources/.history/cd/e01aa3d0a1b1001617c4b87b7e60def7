@@ -235,13 +235,19 @@ public class Scrimish {
 				//cards are printed and values compared to. 
 				//cards are treated according to constraints
 				
-				if(player1[player1I][player1J].getAttackVal() > player2[player2I][player2J].getDefVal() && !(player1[player1I][player1J].getName().equals("Sheild")) && !(player2[player2I][player2J].getName().equals("Sheild"))){
+				if(player1[player1I][player1J].getAttackVal() >= player2[player2I][player2J].getDefVal() && !(player1[player1I][player1J].getName().equals("Sheild")) && !(player2[player2I][player2J].getName().equals("Sheild"))){
 					//if your opponents crown is attacked then you win
 					if(player2[player2I][player2J].getName().equals("Crown")){
 						System.out.println("Player 1 Wins");
 						System.exit(0);
 					}
 					
+					//if you attack with you crown card your opponents non-crown cards then you lose
+					
+					if(player1[player1I][player1J].getName().equals("Crown")){
+						System.out.println("Player 2 Wins");
+						System.exit(0);
+					}
 					
 					
 					player2[player2I][player2J].setName("Destroyed");
@@ -260,70 +266,20 @@ public class Scrimish {
 					player1[player1I][player1J].setName("Destroyed");
 					player1[player1I][player1J].setAttackVal(-100);
 					player1[player1I][player1J].setDefVal(-100);
-				}else if(player1[player1I][player1J].getAttackVal() == player2[player2I][player2J].getDefVal() && !(player1[player1I][player1J].getName().equals("Sheild")) && !(player2[player2I][player2J].getName().equals("Sheild"))){
-					
-					//if your opponents crown is attacked then you win
-					if(player2[player2I][player2J].getName().equals("Crown")){
-						System.out.println("Player 1 Wins");
-						System.exit(0);
-					}
-					
-					//if you attack with you crown card your opponents non-crown cards then you lose
-					
-					if(player1[player1I][player1J].getName().equals("Crown")){
-						System.out.println("Player 2 Wins");
-						System.exit(0);
-					}
-					
-					//discarding both non-crown cards
-					
-					player2[player2I][player2J].setName("Destroyed");
-					player2[player2I][player2J].setAttackVal(-100);
-					player2[player2I][player2J].setDefVal(-100);
-					
-					player1[player1I][player1J].setName("Destroyed");
-					player1[player1I][player1J].setAttackVal(-100);
-					player1[player1I][player1J].setDefVal(-100);
-					
-					
-				}else if((player1[player1I][player1J].getName().equals("Sheild"))){
-					//if shield is used to attack, it is discarded.
-					player1[player1I][player1J].setName("Destroyed");
-					player1[player1I][player1J].setAttackVal(-100);
-					player1[player1I][player1J].setDefVal(-100);
-				}else if((player2[player2I][player2J].getName().equals("Sheild")) && ((player1[player1I][player1J].getName().equals("Archer")) || (player1[player1I][player1J].getName().equals("Crown")))){
-					//if you are attacking with a crown
-					
-					if(player1[player1I][player1J].getName().equals("Crown")){
-						System.out.println("Player 2 Wins");
-						System.exit(0);
-					}
-					
-					//if you are attacking with archer
-					if(player1[player1I][player1J].getName().equals("Archer")){
-						//both are put back into their original piles
-						continue;
-					}
+				}else if(){
 					
 					
 					
-				}else if((player2[player2I][player2J].getName().equals("Sheild"))){
 					
-					//both cards are discarded
-					player2[player2I][player2J].setName("Destroyed");
-					player2[player2I][player2J].setAttackVal(-100);
-					player2[player2I][player2J].setDefVal(-100);
 					
-					player1[player1I][player1J].setName("Destroyed");
-					player1[player1I][player1J].setAttackVal(-100);
-					player1[player1I][player1J].setDefVal(-100);
+					
 					
 					
 				}
 				
 				
-				System.out.println("The attacking card after attack is: " + player1[player1I][player1J].getName());
-				System.out.println("The defending card after attack is: " +player2[player2I][player2J].getName());
+				
+				
 				
 				
 				
@@ -405,7 +361,7 @@ abstract class Cards{
 	
 	
 	public void setName(String name){
-		this.name = name;
+		name = this.name;
 	}
 	
 	public String getName(){

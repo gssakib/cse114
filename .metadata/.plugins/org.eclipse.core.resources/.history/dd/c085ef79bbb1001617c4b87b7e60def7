@@ -243,7 +243,7 @@ public class Scrimish {
 					}
 					
 					
-					
+					System.out.println("lalalalal");
 					player2[player2I][player2J].setName("Destroyed");
 					player2[player2I][player2J].setAttackVal(-100);
 					player2[player2I][player2J].setDefVal(-100);
@@ -405,7 +405,7 @@ abstract class Cards{
 	
 	
 	public void setName(String name){
-		this.name = name;
+		name = this.name;
 	}
 	
 	public String getName(){
