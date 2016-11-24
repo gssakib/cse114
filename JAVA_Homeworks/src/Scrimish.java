@@ -162,17 +162,26 @@ public class Scrimish {
 		if(starting == 1){  
 			//player1 starting 
 			while(!(player1[indexPlayer1][4].getName().equals("Destroyed")) && !(player2[indexPlayer2][4].getName().equals("Destroyed")) ){
+				//player 1 attacks while ai defends..
+				System.out.println("Player 1 attacks while the AI defends");
+				
 				//choose card from top of one of my piles. 
 				boolean status = true;
+				boolean statusOfDiscard = false;
+				boolean statusDestroyed = false;
 				int player1I = 0;
 				int player1J = 0;
 				int player2I = 0;
 				int player2J = 0;
+				String choice = "";
 				Scanner stdin = new Scanner(System.in);
+				Scanner in = new Scanner(System.in);
 				 
 				do{
-					System.out.print("Enter index for which pile you want to attack from: ");
+					System.out.print("Choose a card from your pile: ");
 					int pilePlayer1 = stdin.nextInt();
+					
+					
 					while(pilePlayer1 < 0 || pilePlayer1 > 4){
 						System.out.println("Invalid Entry. There are only 5 piles.");
 						System.out.print("Enter index for which pile you want to attack from: ");
@@ -183,147 +192,191 @@ public class Scrimish {
 					
 					for(int j = 0; j<player1[pilePlayer1].length; j++){
 						if(player1[pilePlayer1][j].getName().equals("Destroyed") && j == 4){
+							statusDestroyed = true;
 							break;
 						}else if(player1[pilePlayer1][j].getName().equals("Destroyed")){
 							continue;
 						}else{
 							player1I = pilePlayer1;
 							player1J = j;
-							status = false;
+							statusDestroyed = false;
 							break;
+							
 						}
 					}
-					
-				}while(status);
-				
-				
-				System.out.println("The attacking card is: " + player1[player1I][player1J].getName());
-				
-				//choose card from top of one of opponents files. 
-				
-				
-				do{
-					System.out.print("Enter index for which pile you want to attack to: ");
-					int pilePlayer2 = stdin.nextInt();
-					while(pilePlayer2 < 0 || pilePlayer2 > 4){
-						System.out.println("Invalid Entry. There are only 5 piles.");
-						System.out.print("Enter index for which pile you want to attack to: ");
-						pilePlayer2 = stdin.nextInt();
-					}
-					
-					
-					
-					for(int j = 0; j<player2[pilePlayer2].length; j++){
-						if(player2[pilePlayer2][j].getName().equals("Destroyed") && j == 4){
-							break;
-						}else if(player2[pilePlayer2][j].getName().equals("Destroyed")){
-							continue;
+					if(statusDestroyed == false){
+						System.out.println("The chosen card is: " + player1[player1I][player1J].getName());
+						System.out.print("d. Discard or a. Attack: ");
+						choice = in.nextLine();
+						
+						if(choice.equals("d") && !(player1[player1I][player1J].getName().equals("Crown"))){
+							//discard the chosen card.
+							System.out.println("The discarded is: " + player1[player1I][player1J].getName());
+							player1[player1I][player1J].setName("Destroyed");
+							player1[player1I][player1J].setAttackVal(-100);
+							player1[player1I][player1J].setDefVal(-100);
+							status = false;
+							statusOfDiscard = true;
+						}else if(choice.equals("d") && (player1[player1I][player1J].getName().equals("Crown"))){
+							System.out.println("Crown Card can't be discarded.");
+						}else if(choice.equals("a")){
+							//continue with attack.
+							status = false;
 						}else{
-							player2I = pilePlayer2;
-							player2J = j;
-							status = false;
-							break;
+							System.out.println("Invalid Entry. Choose option from the given choice.");
 						}
+					}else{
+						
+						System.out.println("The chosen card and the whole pile is: " + player1[player1I][player1J].getName());
+						System.out.println("Please choose another card from a different pile.");
+					
 					}
+					
+					
+					
+					
 					
 				}while(status);
 				
-				
-				System.out.println("The defending card is: " +player2[player2I][player2J].getName());
-				
-				
-				//cards are printed and values compared to. 
-				//cards are treated according to constraints
-				
-				if(player1[player1I][player1J].getAttackVal() > player2[player2I][player2J].getDefVal() && !(player1[player1I][player1J].getName().equals("Sheild")) && !(player2[player2I][player2J].getName().equals("Sheild"))){
-					//if your opponents crown is attacked then you win
-					if(player2[player2I][player2J].getName().equals("Crown")){
-						System.out.println("Player 1 Wins");
-						System.exit(0);
+				//if file has not been discarded 
+				if(statusOfDiscard == false){
+					System.out.println("The attacking card is: " + player1[player1I][player1J].getName());
+					
+					//choose card from top of one of opponents files. 
+					
+					
+					do{
+						System.out.print("Enter index for which pile you want to attack to: ");
+						int pilePlayer2 = stdin.nextInt();
+						while(pilePlayer2 < 0 || pilePlayer2 > 4){
+							System.out.println("Invalid Entry. There are only 5 piles.");
+							System.out.print("Enter index for which pile you want to attack to: ");
+							pilePlayer2 = stdin.nextInt();
+						}
+						
+						
+						
+						for(int j = 0; j<player2[pilePlayer2].length; j++){
+							if(player2[pilePlayer2][j].getName().equals("Destroyed") && j == 4){
+								break;
+							}else if(player2[pilePlayer2][j].getName().equals("Destroyed")){
+								continue;
+							}else{
+								player2I = pilePlayer2;
+								player2J = j;
+								status = false;
+								break;
+							}
+						}
+						
+					}while(status);
+					
+					
+					System.out.println("The defending card is: " +player2[player2I][player2J].getName());
+					
+					
+					//cards are printed and values compared to. 
+					//cards are treated according to constraints
+					
+					if(player1[player1I][player1J].getAttackVal() > player2[player2I][player2J].getDefVal() && !(player1[player1I][player1J].getName().equals("Sheild")) && !(player2[player2I][player2J].getName().equals("Sheild"))){
+						//if your opponents crown is attacked then you win
+						if(player2[player2I][player2J].getName().equals("Crown")){
+							System.out.println("Player 1 Wins");
+							System.exit(0);
+						}
+						
+						
+						
+						player2[player2I][player2J].setName("Destroyed");
+						player2[player2I][player2J].setAttackVal(-100);
+						player2[player2I][player2J].setDefVal(-100);
+						
+						
+					}else if(player1[player1I][player1J].getAttackVal() < player2[player2I][player2J].getDefVal() && !(player1[player1I][player1J].getName().equals("Sheild")) && !(player2[player2I][player2J].getName().equals("Sheild"))){
+						//if you attack with you crown card your opponents non-crown cards then you lose
+						
+						if(player1[player1I][player1J].getName().equals("Crown")){
+							System.out.println("Player 2 Wins");
+							System.exit(0);
+						}
+						
+						player1[player1I][player1J].setName("Destroyed");
+						player1[player1I][player1J].setAttackVal(-100);
+						player1[player1I][player1J].setDefVal(-100);
+					}else if(player1[player1I][player1J].getAttackVal() == player2[player2I][player2J].getDefVal() && !(player1[player1I][player1J].getName().equals("Sheild")) && !(player2[player2I][player2J].getName().equals("Sheild"))){
+						
+						//if your opponents crown is attacked then you win
+						if(player2[player2I][player2J].getName().equals("Crown")){
+							System.out.println("Player 1 Wins");
+							System.exit(0);
+						}
+						
+						//if you attack with you crown card your opponents non-crown cards then you lose
+						
+						if(player1[player1I][player1J].getName().equals("Crown")){
+							System.out.println("Player 2 Wins");
+							System.exit(0);
+						}
+						
+						//discarding both non-crown cards
+						
+						player2[player2I][player2J].setName("Destroyed");
+						player2[player2I][player2J].setAttackVal(-100);
+						player2[player2I][player2J].setDefVal(-100);
+						
+						player1[player1I][player1J].setName("Destroyed");
+						player1[player1I][player1J].setAttackVal(-100);
+						player1[player1I][player1J].setDefVal(-100);
+						
+						
+					}else if((player1[player1I][player1J].getName().equals("Sheild"))){
+						//if shield is used to attack, it is discarded.
+						player1[player1I][player1J].setName("Destroyed");
+						player1[player1I][player1J].setAttackVal(-100);
+						player1[player1I][player1J].setDefVal(-100);
+					}else if((player2[player2I][player2J].getName().equals("Sheild")) && ((player1[player1I][player1J].getName().equals("Archer")) || (player1[player1I][player1J].getName().equals("Crown")))){
+						//if you are attacking with a crown
+						
+						if(player1[player1I][player1J].getName().equals("Crown")){
+							System.out.println("Player 2 Wins");
+							System.exit(0);
+						}
+						
+						//if you are attacking with archer
+						if(player1[player1I][player1J].getName().equals("Archer")){
+							//both are put back into their original piles
+							continue;
+						}
+						
+						
+						
+					}else if((player2[player2I][player2J].getName().equals("Sheild"))){
+						
+						//both cards are discarded
+						player2[player2I][player2J].setName("Destroyed");
+						player2[player2I][player2J].setAttackVal(-100);
+						player2[player2I][player2J].setDefVal(-100);
+						
+						player1[player1I][player1J].setName("Destroyed");
+						player1[player1I][player1J].setAttackVal(-100);
+						player1[player1I][player1J].setDefVal(-100);
+						
+						
 					}
 					
 					
-					
-					player2[player2I][player2J].setName("Destroyed");
-					player2[player2I][player2J].setAttackVal(-100);
-					player2[player2I][player2J].setDefVal(-100);
-					
-					
-				}else if(player1[player1I][player1J].getAttackVal() < player2[player2I][player2J].getDefVal() && !(player1[player1I][player1J].getName().equals("Sheild")) && !(player2[player2I][player2J].getName().equals("Sheild"))){
-					//if you attack with you crown card your opponents non-crown cards then you lose
-					
-					if(player1[player1I][player1J].getName().equals("Crown")){
-						System.out.println("Player 2 Wins");
-						System.exit(0);
-					}
-					
-					player1[player1I][player1J].setName("Destroyed");
-					player1[player1I][player1J].setAttackVal(-100);
-					player1[player1I][player1J].setDefVal(-100);
-				}else if(player1[player1I][player1J].getAttackVal() == player2[player2I][player2J].getDefVal() && !(player1[player1I][player1J].getName().equals("Sheild")) && !(player2[player2I][player2J].getName().equals("Sheild"))){
-					
-					//if your opponents crown is attacked then you win
-					if(player2[player2I][player2J].getName().equals("Crown")){
-						System.out.println("Player 1 Wins");
-						System.exit(0);
-					}
-					
-					//if you attack with you crown card your opponents non-crown cards then you lose
-					
-					if(player1[player1I][player1J].getName().equals("Crown")){
-						System.out.println("Player 2 Wins");
-						System.exit(0);
-					}
-					
-					//discarding both non-crown cards
-					
-					player2[player2I][player2J].setName("Destroyed");
-					player2[player2I][player2J].setAttackVal(-100);
-					player2[player2I][player2J].setDefVal(-100);
-					
-					player1[player1I][player1J].setName("Destroyed");
-					player1[player1I][player1J].setAttackVal(-100);
-					player1[player1I][player1J].setDefVal(-100);
-					
-					
-				}else if((player1[player1I][player1J].getName().equals("Sheild"))){
-					//if shield is used to attack, it is discarded.
-					player1[player1I][player1J].setName("Destroyed");
-					player1[player1I][player1J].setAttackVal(-100);
-					player1[player1I][player1J].setDefVal(-100);
-				}else if((player2[player2I][player2J].getName().equals("Sheild")) && ((player1[player1I][player1J].getName().equals("Archer")) || (player1[player1I][player1J].getName().equals("Crown")))){
-					//if you are attacking with a crown
-					
-					if(player1[player1I][player1J].getName().equals("Crown")){
-						System.out.println("Player 2 Wins");
-						System.exit(0);
-					}
-					
-					//if you are attacking with archer
-					if(player1[player1I][player1J].getName().equals("Archer")){
-						//both are put back into their original piles
-						continue;
-					}
-					
-					
-					
-				}else if((player2[player2I][player2J].getName().equals("Sheild"))){
-					
-					//both cards are discarded
-					player2[player2I][player2J].setName("Destroyed");
-					player2[player2I][player2J].setAttackVal(-100);
-					player2[player2I][player2J].setDefVal(-100);
-					
-					player1[player1I][player1J].setName("Destroyed");
-					player1[player1I][player1J].setAttackVal(-100);
-					player1[player1I][player1J].setDefVal(-100);
-					
-					
+					System.out.println("The attacking card after attack is: " + player1[player1I][player1J].getName());
+					System.out.println("The defending card after attack is: " +player2[player2I][player2J].getName());
 				}
 				
 				
-				System.out.println("The attacking card after attack is: " + player1[player1I][player1J].getName());
-				System.out.println("The defending card after attack is: " +player2[player2I][player2J].getName());
+				
+				System.out.println("Player 1 attack ended. Now the AI attacks, while player 1 defends");
+				// ai attacks and player 1 defends.
+				
+				
+				
+				
 				
 				
 				
