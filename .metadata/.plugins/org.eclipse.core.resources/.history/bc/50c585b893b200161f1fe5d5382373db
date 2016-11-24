@@ -27,7 +27,7 @@ public class Scrimish {
 		
 		System.out.println("");
 		System.out.println("");
-		gamePlay(person,computer, -1);
+		gamePlay(person,computer, 1);
 		//System.out.println(c1.getVal());
 
 	}

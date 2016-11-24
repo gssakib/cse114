@@ -27,7 +27,7 @@ public class Scrimish {
 		
 		System.out.println("");
 		System.out.println("");
-		gamePlay(person,computer, -1);
+		gamePlay(person,computer, 1);
 		//System.out.println(c1.getVal());
 
 	}
@@ -174,25 +174,21 @@ public class Scrimish {
 				int player1J = 0;
 				int player2I = 0;
 				int player2J = 0;
-				
+				int pilePlayer1 = 0;
 				String choice = "";
 				Scanner stdin = new Scanner(System.in);
 				Scanner in = new Scanner(System.in);
 				 
 				do{
 					
-					
+					try{
 						System.out.print("Choose a card from your pile: ");
-						
+						pilePlayer1 = stdin.nextInt();
+					}catch(Exception e){
+						System.out.println("Invalid Entry.Please enter a valid number(0-5)");
+						pilePlayer1 = stdin.nextInt();
+					}
 					
-						while (!stdin.hasNextInt()) 
-						{        
-						    stdin.next(); // Read and discard offending non-int input
-						    System.out.println("Invalid Entry. Please Enter pile index number(0-4)"); // Re-prompt
-						    System.out.print("Choose a card from your pile: ");
-						}
-
-						int pilePlayer1 = stdin.nextInt();
 					
 					
 					
@@ -736,17 +732,7 @@ public class Scrimish {
 				 
 				do{
 					System.out.print("Choose a card from your pile: ");
-						
-						
-						while (!stdin.hasNextInt()) 
-						{        
-						    stdin.next(); // Read and discard offending non-int input
-						    System.out.println("Invalid Entry. Please Enter pile index number(0-4)"); // Re-prompt
-						    System.out.print("Choose a card from your pile: ");
-						}
-
 						int pilePlayer1 = stdin.nextInt();
-						
 					
 					
 					while(pilePlayer1 < 0 || pilePlayer1 > 4){
