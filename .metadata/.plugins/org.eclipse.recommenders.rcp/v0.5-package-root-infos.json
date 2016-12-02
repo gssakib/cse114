@@ -39,6 +39,19 @@
     "javaRuntime": true
   },
   {
+    "symbolicName": "jfxswt",
+    "version": {
+      "major": -1,
+      "minor": -1,
+      "micro": -1,
+      "qualifier": ""
+    },
+    "jarFileFingerprint": "bf94076e4f26a76657eff8c4011c4c93dbd0fd76",
+    "jarFileModificationDate": "2016-08-24T12:28:24.862-04:00",
+    "location": "C:\\Program Files\\Java\\jdk\\jre\\lib\\jfxswt.jar",
+    "javaRuntime": false
+  },
+  {
     "symbolicName": "jre",
     "version": {
       "major": 1,

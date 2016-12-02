@@ -1,0 +1,53 @@
+import java.util.ArrayList;
+
+public class Homework8Methods {
+	// part 1
+		public static int findTimes10(int[] nums) {
+			int lower = 0;
+			
+			return findTimes10Helper(nums, lower);
+		}
+
+		
+		
+		public static int findTimes10Helper(int[] nums, int lower){
+			
+			if(lower+1 == nums.length ){
+				System.out.println("lala");
+				return -1;
+			}
+			if(10*nums[lower] != nums[lower + 1] ){
+				System.out.println(lower);
+				return findTimes10Helper(nums, lower + 1);
+			}else{
+				System.out.println("lulu");
+				return (lower);
+			}
+			//return 1;
+		}
+		
+		
+		
+		// part 2
+		public static void replaceMult5(int[] nums, int newVal) {
+			// fill this in
+		}
+
+		// part 3
+		public static ArrayList<int[]> permuteArray(int[] array) {
+			// fill this in
+			return null;
+		}
+
+		// part 4
+		public static String[] mobius(String s1, String s2) {
+			// fill this in
+			return null;
+		}
+
+		// part 5
+		public static int teddy(int initial, int goal, int increment) {
+			// fill this in
+			return -2;
+		}
+}
