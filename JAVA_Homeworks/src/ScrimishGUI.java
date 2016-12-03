@@ -1,4 +1,5 @@
 import javafx.application.Application;
+
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -16,18 +17,17 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.paint.Color;
 import javafx.scene.image.Image; 
 import javafx.scene.image.ImageView;
-
+import javafx.scene.control.Label;
 import java.util.Collections;
 
 public class ScrimishGUI extends Application{
 
 	
-		private TextField tfAnnualInterestRate = new TextField();
-		private TextField tfNumberOfYears = new TextField();
-		private TextField tfLoanAmount = new TextField();
-		private TextField tfMonthlyPayment = new TextField();
-		private TextField tfTotalPayment = new TextField();
-		private Button btCalculate = new Button("Calculate");
+		private TextField addCardTx = new TextField();
+		private TextField attackTx = new TextField();
+		private TextField discardTx = new TextField();
+		private TextField AIpileTx = new TextField();
+		private TextField playerPileTx = new TextField();
 
 		public void start(Stage primaryStage) {
 			// Create UI
@@ -35,39 +35,87 @@ public class ScrimishGUI extends Application{
 			
 			
 			//ai heading
-			Text aiHeading = new Text(500, 50, "AI Pile");
-			pane.getChildren().add(aiHeading);
-			aiHeading.setFont(Font.font("Courier", FontWeight.BOLD,
+			Text setup = new Text(500, 50, "Setup");
+			pane.getChildren().add(setup);
+			setup.setFont(Font.font("Courier", FontWeight.BOLD,
 					FontPosture.ITALIC, 15));
 			
 			
 			//player 1 heading
-			Text player = new Text(500, 300, "Player 1");
-			pane.getChildren().add(player);
-			player.setFont(Font.font("Courier", FontWeight.BOLD,
+			Text gamePlay = new Text(500, 300, "GamePlay");
+			pane.getChildren().add(gamePlay);
+			gamePlay.setFont(Font.font("Courier", FontWeight.BOLD,
 					FontPosture.ITALIC, 15));
 			
-			//adding images
-			//Image image = new Image(getClass().getResourceAsStream("file:mit.jpg"));
 			
-			//pane.setadd(new ImageView(image));
-			//ImageView imageView2 = new ImageView(image); 
-			//imageView2.setFitHeight(100); imageView2.setFitWidth(100); 
-			//imageView2.setRotate(90); 
-			//pane.getChildren().add(imageView2);
+			
+			
+			
+			
+			//Ai card status
+			
+			Text AIstat = new Text(100, 100, "AI Pile");
+			pane.getChildren().add(AIstat);
+			AIstat.setFont(Font.font("Courier", FontWeight.BOLD,
+					FontPosture.ITALIC, 15));
+			
+			
+			
+			//Ai card status
+			
+			Text playerStat = new Text(100, 400, "Player Pile");
+			pane.getChildren().add(playerStat);
+			playerStat.setFont(Font.font("Courier", FontWeight.BOLD,
+					FontPosture.ITALIC, 15));
+			
+			
 			
 			//adding buttons
 
-			Button setup = new Button("Setup");
-			pane.getChildren().add(setup);
-			setup.setTranslateX(0);
-			setup.setTranslateY(0);
+			Button addCardBt = new Button("Add Card");
+			pane.getChildren().add(addCardBt);
+			addCardBt.setTranslateX(400);
+			addCardBt.setTranslateY(100);
 			
 			
-			Button play = new Button("Play");
-			pane.getChildren().add(play);
-			play.setTranslateX(5);
-			play.setTranslateY(30);
+			Button attackBt = new Button("Attack");
+			pane.getChildren().add(attackBt);
+			attackBt.setTranslateX(400);
+			attackBt.setTranslateY(350);
+			
+			
+			Button discardBt = new Button("Discard");
+			pane.getChildren().add(discardBt);
+			discardBt.setTranslateX(400);
+			discardBt.setTranslateY(400);
+			
+			
+			
+			//adding text fields
+			pane.getChildren().add(addCardTx);
+			addCardTx.setTranslateX(500);
+			addCardTx.setTranslateY(100);
+			
+			
+			pane.getChildren().add(attackTx);
+			attackTx.setTranslateX(500);
+			attackTx.setTranslateY(350);
+			
+			pane.getChildren().add(discardTx);
+			discardTx.setTranslateX(500);
+			discardTx.setTranslateY(400);
+			
+			
+			
+			pane.getChildren().add(AIpileTx);
+			AIpileTx.setTranslateX(50);
+			AIpileTx.setTranslateY(200);
+			
+			pane.getChildren().add(playerPileTx);
+			playerPileTx.setTranslateX(50);
+			playerPileTx.setTranslateY(500);
+			
+			
 			
 			
 			//adding radio buttons

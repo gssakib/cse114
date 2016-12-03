@@ -6,7 +6,7 @@ public class Homework8Driver {
 		// Below are the test cases from the homework assignment PDF.
 		// You should add your own additional code to check the return values
 		// to see if they are correct.
-		/*
+		
 		System.out.println("Part 1:"); 
 		int result;
 		result = Homework8Methods.findTimes10(new int[]{1,5,3,5,50,2,4,6,60});
@@ -34,23 +34,23 @@ public class Homework8Driver {
 		printArray(nums);
 		
 		System.out.println("\nPart 3:");
-		nums = new int[]{4, 7, 1, 2};
+		nums = new int[]{4, 7};
 		ArrayList<int[]> perms = Homework8Methods.permuteArray(nums);
 		System.out.println("permuteArray({4, 7, 1, 2}):");
 		// uncomment the following code once you have implemented permuteArray()		
-		/*for (int[] array: perms) {
+		for (int[] array: perms) {
 			for (int i = 0; i < array.length; i++)
 				System.out.print(array[i] + " ");
 			System.out.println();
-		}*/
-		/*
+		}
+		
 		System.out.println("\nPart 4:");
-		String s1 = "Hello", s2 = "Java";
+		String s1 = "Gazi", s2 = "Sakib";
 		String[] strs = Homework8Methods.mobius(s1, s2);
 		// uncomment the following code once you have implemented mobius
-		/*for (String s : strs)
+		for (String s : strs)
 			System.out.println(s);
-		*/
+		
 		
 		System.out.println("\nPart 5: ");
 		System.out.println("teddy(10,4,2) = " + Homework8Methods.teddy(10,4,2));
@@ -60,8 +60,6 @@ public class Homework8Driver {
 		System.out.println("teddy(40,5,6) = " + Homework8Methods.teddy(40,5,6));
 		System.out.println("teddy(30,56,5) = " + Homework8Methods.teddy(30,56,5));
 		System.out.println("teddy(30,55,4) = " + Homework8Methods.teddy(30,55,4));
-	
-		//System.out.println(Homework8Methods.bears(30,55,4,3));
 	}
 	
 	public static void printArray(int[] digits) {
@@ -71,4 +69,3 @@ public class Homework8Driver {
 	}
 
 }
-
