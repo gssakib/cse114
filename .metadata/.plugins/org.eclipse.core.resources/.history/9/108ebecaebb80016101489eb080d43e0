@@ -51,7 +51,7 @@ public class Homework8Driver {
 		/*for (String s : strs)
 			System.out.println(s);
 		*/
-		
+		/*
 		System.out.println("\nPart 5: ");
 		System.out.println("teddy(10,4,2) = " + Homework8Methods.teddy(10,4,2));
 		System.out.println("teddy(9,5,3) = " + Homework8Methods.teddy(9,5,3));
@@ -60,8 +60,8 @@ public class Homework8Driver {
 		System.out.println("teddy(40,5,6) = " + Homework8Methods.teddy(40,5,6));
 		System.out.println("teddy(30,56,5) = " + Homework8Methods.teddy(30,56,5));
 		System.out.println("teddy(30,55,4) = " + Homework8Methods.teddy(30,55,4));
-	
-		//System.out.println(Homework8Methods.bears(30,55,4,3));
+	*/
+		System.out.println(Homework8Methods.bears(99,91,53,3));
 	}
 	
 	public static void printArray(int[] digits) {

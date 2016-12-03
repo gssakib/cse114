@@ -139,19 +139,8 @@ public class Homework8Methods {
 
 		// part 5
 		public static int teddy(int initial, int goal, int increment) {
-			int count = 0;
-			
-			while (count<= 10){
-				if(bears(initial,  goal, increment,  count)){
-					return count;
-				}else{
-					count++;
-				}
-				
-				
-			}
-			return -1;
-			
+			// fill this in
+			return -2;
 		}
 		
 		
@@ -161,18 +150,15 @@ public class Homework8Methods {
 			}else if(n == 0){
 				return false;
 			}else if(bears(initial + increment, goal, increment, n-1)){
-				return true;
+				
 			}else if ((initial %2 == 0) && bears(initial/2, goal, increment, n-1) ){
-				return true;
-			}else if(bears(initial - increment, goal, increment, n-1)){
-				return true;
-			}else if((initial %2 == 0) && bears(3*(initial/2), goal, increment, n-1)){
 				return true;
 			}else{
 				return false;
 			}
-			
+			return false;
 		}
+		
 		
 		
 		
