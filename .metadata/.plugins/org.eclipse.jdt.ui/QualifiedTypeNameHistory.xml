@@ -19,4 +19,7 @@
 <fullyQualifiedTypeName name="javafx.scene.layout.BorderPane"/>
 <fullyQualifiedTypeName name="javafx.scene.layout.VBox"/>
 <fullyQualifiedTypeName name="java.awt.Insets"/>
+<fullyQualifiedTypeName name="javafx.scene.control.TextArea"/>
+<fullyQualifiedTypeName name="javafx.scene.control.Alert"/>
+<fullyQualifiedTypeName name="javafx.scene.control.Alert.AlertType"/>
 </qualifiedTypeNameHistroy>
