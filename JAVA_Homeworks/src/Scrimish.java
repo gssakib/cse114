@@ -252,7 +252,7 @@ public class Scrimish {
 					
 					
 				}while(status);
-				
+				status = true;
 				//if file has not been discarded 
 				if(statusOfDiscard == false){
 					System.out.println("The attacking card is: " + player1[player1I][player1J].getName());
@@ -273,6 +273,7 @@ public class Scrimish {
 						
 						for(int j = 0; j<player2[pilePlayer2].length; j++){
 							if(player2[pilePlayer2][j].getName().equals("Destroyed") && j == 4){
+								System.out.println("The whole pile is destroyed. Please pick from a different pile.");
 								break;
 							}else if(player2[pilePlayer2][j].getName().equals("Destroyed")){
 								continue;
@@ -360,7 +361,7 @@ public class Scrimish {
 						//if you are attacking with archer
 						if(player1[player1I][player1J].getName().equals("Archer")){
 							//both are put back into their original piles
-							continue;
+							//continue;
 						}
 						
 						
@@ -425,12 +426,12 @@ public class Scrimish {
 				status = true;
 				do{
 					
-					//AI generating i and j index of attacking card from its own file.
+					//AI generating i and j index of defending card from player 1 pile.
 					 int AIi = (int)(Math.random() * 5);
 					  
 					  
 						for(int j = 0; j<player1[AIi].length; j++){
-							if((player2[AIi][j].getName().equals("Destroyed") && j == 4)){
+							if((player1[AIi][j].getName().equals("Destroyed") && j == 4)){
 								break;
 							}else if(player1[AIi][j].getName().equals("Destroyed")){
 								continue;
@@ -522,7 +523,7 @@ public class Scrimish {
 					//if ai is attacking with archer, nothing happens.
 					if(player2[player2I][player2J].getName().equals("Archer")){
 						//both are put back into their original piles
-						continue;
+						//continue;
 					}
 					
 					
@@ -602,6 +603,7 @@ public class Scrimish {
 					  
 						for(int j = 0; j<player1[AIi].length; j++){
 							if((player2[AIi][j].getName().equals("Destroyed") && j == 4)){
+								System.out.println("The whole pile is destroyed. Please pick from a different pile.");
 								break;
 							}else if(player1[AIi][j].getName().equals("Destroyed")){
 								continue;
@@ -693,7 +695,7 @@ public class Scrimish {
 					//if ai is attacking with archer, nothing happens.
 					if(player2[player2I][player2J].getName().equals("Archer")){
 						//both are put back into their original piles
-						continue;
+						//continue;
 					}
 					
 					
@@ -912,7 +914,7 @@ public class Scrimish {
 						//if you are attacking with archer
 						if(player1[player1I][player1J].getName().equals("Archer")){
 							//both are put back into their original piles
-							continue;
+							//continue;
 						}
 						
 						

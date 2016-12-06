@@ -1,8 +1,11 @@
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.BorderPane;
@@ -26,21 +29,43 @@ public class ScrimishGUI extends Application{
 
 	
 		private  TextField addCardTx = new TextField();
-		private TextField attackTx = new TextField();
-		private TextField discardTx = new TextField();
-		private TextField AIpileTx = new TextField();
-		private TextField playerPileTx = new TextField();
+		private TextField attackToTx = new TextField();
+		private TextField attackWithTx = new TextField();
+		
+		
+		
+		
+		private TextArea AIpileTx = new TextArea();
+
+		
+		
+		
+		
+		
+		
+		//first pile
+		private TextArea playerPileTx = new TextArea();
+
+		
+		
+		
 		
 		//setup action
 		
 		Cards[][] person = new Cards[5][5];
 		int personI= 0 ;
-		
 		int personJ = 0;
-		int[] count = new int[9];
+		int[] countPer = new int[9];
 		
 		
-
+		
+		Cards[][] AI = new Cards[5][5];
+		int[] countAI = new int[9];
+		int aiI = 0;
+		int aiJ = 0;
+		
+		
+		
 		public void start(Stage primaryStage) {
 			// Create UI
 			Pane pane = new Pane();
@@ -75,11 +100,29 @@ public class ScrimishGUI extends Application{
 			
 			//Ai card status
 			
-			Text playerStat = new Text(100, 400, "Player Pile");
+			Text playerStat = new Text(100, 450, "Player Pile");
 			pane.getChildren().add(playerStat);
 			playerStat.setFont(Font.font("Courier", FontWeight.BOLD,
 					FontPosture.ITALIC, 15));
 			
+			
+			
+			
+			
+			//attack with /discard input
+			
+			Text attackWithDiscard = new Text(530, 370, "Attack With / Discard");
+			pane.getChildren().add(attackWithDiscard);
+			attackWithDiscard.setFont(Font.font("Courier", FontWeight.BOLD,
+					FontPosture.ITALIC, 15));
+			
+			
+			//attack to
+			
+			Text attackTo = new Text(570, 420, "Attack To");
+			pane.getChildren().add(attackTo);
+			attackTo.setFont(Font.font("Courier", FontWeight.BOLD,
+					FontPosture.ITALIC, 15));
 			
 			
 			//adding buttons
@@ -90,7 +133,10 @@ public class ScrimishGUI extends Application{
 			addCardBt.setTranslateY(100);
 			
 			
-		
+			Button genPileBt = new Button("Generate Pile for AI");
+			pane.getChildren().add(genPileBt);
+			genPileBt.setTranslateX(90);
+			genPileBt.setTranslateY(110);
 			
 			
 			
@@ -114,27 +160,39 @@ public class ScrimishGUI extends Application{
 			addCardTx.setTranslateY(100);
 			
 			
-			pane.getChildren().add(attackTx);
-			attackTx.setTranslateX(500);
-			attackTx.setTranslateY(350);
-			
-			pane.getChildren().add(discardTx);
-			discardTx.setTranslateX(500);
-			discardTx.setTranslateY(400);
+			pane.getChildren().add(attackToTx);
+			attackToTx.setTranslateX(700);
+			attackToTx.setTranslateY(400);
 			
 			
+			pane.getChildren().add(attackWithTx);
+			attackWithTx.setTranslateX(700);
+			attackWithTx.setTranslateY(350);
+			
+			
+			
+			//adding AI piles
 			
 			pane.getChildren().add(AIpileTx);
-			AIpileTx.setTranslateX(50);
-			AIpileTx.setTranslateY(200);
-			//AIpileTx.setScaleY(6);
+			AIpileTx.setTranslateX(10);
+			AIpileTx.setTranslateY(150);
+			AIpileTx.setPrefSize(350, 150);
+	
+			
+			
+			
+			
+			
+			
+			
+			//adding player piles
+			
+			
 			
 			pane.getChildren().add(playerPileTx);
-			//playerPileTx.setFont(Font.font (5));
-			playerPileTx.setTranslateX(50);
+			playerPileTx.setTranslateX(10);
 			playerPileTx.setTranslateY(500);
-			playerPileTx.setScaleY(6);
-			
+			playerPileTx.setPrefSize(350, 150);
 			
 			
 			//adding radio buttons
@@ -160,70 +218,75 @@ public class ScrimishGUI extends Application{
 			
 			
 			
-			//addCard action
+			//addCard action for player
 			
 			addCardBt.setOnAction(e -> {
 				String choice = addCardTx.getText();
 				
 				
-				if(choice.equals("1")&& count[1] < 5){
+				if(choice.equals("1")&& countPer[1] < 5){
 					person[personI][personJ] = new Dagger();
-					count[1]++;
+					countPer[1]++;
 					increment();
 					addCardTx.setText("");
 					playerPileStat();
-				}else if(choice.equals("2")&& count[2] < 5){
+				}else if(choice.equals("2")&& countPer[2] < 5){
 					person[personI][personJ] = new Sword();
-					count[2]++;
+					countPer[2]++;
 					increment();
 					addCardTx.setText("");
 					playerPileStat();
 					
-				}else if(choice.equals("3") && count[3] < 3){
+				}else if(choice.equals("3") && countPer[3] < 3){
 					person[personI][personJ] = new MorningStar();
-					count[3]++;
+					countPer[3]++;
 					increment();
 					addCardTx.setText("");
 					playerPileStat();
-				}else if(choice.equals("4")&& count[4] < 3){
+				}else if(choice.equals("4")&& countPer[4] < 3){
 					person[personI][personJ] = new WarAxe();
-					count[4]++;
+					countPer[4]++;
 					increment();
 					addCardTx.setText("");
 					playerPileStat();
-				}else if(choice.equals("5")&& count[5] < 2){
+				}else if(choice.equals("5")&& countPer[5] < 2){
 					person[personI][personJ] = new Halberd();
-					count[5]++;
+					countPer[5]++;
 					increment();
 					addCardTx.setText("");
 					playerPileStat();
-				}else if(choice.equals("6")&& count[6] < 2){
+				}else if(choice.equals("6")&& countPer[6] < 2){
 					person[personI][personJ] = new LongSword();
-					count[6]++;
+					countPer[6]++;
 					increment();
 					addCardTx.setText("");
 					playerPileStat();
-				}else if(choice.equals("7")&& count[7] < 2){
+				}else if(choice.equals("7")&& countPer[7] < 2){
 					person[personI][personJ] = new Archer();
-					count[7]++;
+					countPer[7]++;
 					increment();
 					addCardTx.setText("");
 					playerPileStat();
-				}else if(choice.equals("-1")&& count[8] < 2){
+				}else if(choice.equals("-1")&& countPer[8] < 2){
 					person[personI][personJ] = new Sheild();
-					count[8]++;
+					countPer[8]++;
 					increment();
 					addCardTx.setText("");
 					playerPileStat();
-				}else if(choice.equals("-2") && count[0] < 1 && personJ == 4){
+				}else if(choice.equals("-2") && countPer[0] < 1 && personJ == 4){
 					person[personI][personJ] = new Crown();
-					count[0]++;
+					countPer[0]++;
 					increment();
 					addCardTx.setText("");
 					playerPileStat();
 					
 				}else{
-					addCardTx.setText("Enter Valid Card on Next Choice");
+					Alert alert = new Alert(AlertType.INFORMATION);
+					alert.setTitle("Information Dialog");
+					alert.setHeaderText(null);
+					alert.setContentText("Enter valid Card Number!");
+					addCardTx.setText("");
+					alert.showAndWait();
 					
 					
 					
@@ -234,6 +297,503 @@ public class ScrimishGUI extends Application{
 				
 				
 				});
+			
+			
+			//genPileaction for AI
+			
+			genPileBt.setOnAction(e -> {
+			
+				for(int i = 0; i < AI.length; i++){
+					for(int j = 0; j< AI[i].length; j++){
+						String choice = Integer.toString((-2 + (int)(Math.random() * 10))); 
+						
+						
+						
+						if(choice.equals("1") && countAI[1] < 5){
+							AI[i][j] = new Dagger();
+							countAI[1]++;
+						}else if(choice.equals("2") && countAI[2] < 5){
+							AI[i][j] = new Sword();
+							countAI[2]++;
+						}else if(choice.equals("3") && countAI[3] < 3){
+							AI[i][j] = new MorningStar();
+							countAI[3]++;
+						}else if(choice.equals("4")&& countAI[4] < 3){
+							AI[i][j] = new WarAxe();
+							countAI[4]++;
+						}else if(choice.equals("5") && countAI[5] < 2){
+							AI[i][j] = new Halberd();
+							countAI[5]++;
+						}else if(choice.equals("6") && countAI[6] < 2){
+							AI[i][j] = new LongSword();
+							countAI[6]++;
+						}else if(choice.equals("7")&& countAI[7] < 2){
+							AI[i][j] = new Archer();
+							countAI[7]++;
+						}else if(choice.equals("-1") && countAI[8] < 2){
+							AI[i][j] = new Sheild();
+							countAI[8]++;
+						}else if(choice.equals("-2") && countAI[0] < 1 && j == 4 ){
+							AI[i][j] = new Crown();
+							countAI[0]++;
+						}else{
+							j--;
+						}
+					}	
+				}
+			
+				AIPileStat();
+				aiI = 4  ;
+				aiJ = 4;
+			
+			});
+			
+			
+			//player  attack button
+			attackBt.setOnAction(e -> {
+				System.out.println(personI);
+				System.out.println(personJ);
+				System.out.println(aiI);
+				System.out.println(aiJ);
+				if(personI == 4 && personJ == 4 && aiI == 4 && aiJ == 4){
+					if((attackToTx.getText().equals("0") || attackToTx.getText().equals("1") || attackToTx.getText().equals("2") || attackToTx.getText().equals("3") || attackToTx.getText().equals("4")) && (attackWithTx.getText().equals("0") || attackWithTx.getText().equals("1") || attackWithTx.getText().equals("2") || attackWithTx.getText().equals("3") || attackWithTx.getText().equals("4")) ){
+						int player1I = 0;
+						int player1J = 0;
+						int player2I = 0;
+						int player2J = 0;
+						int pilePerson = Integer.valueOf(attackWithTx.getText()); 
+						int pileAI = Integer.valueOf(attackToTx.getText());
+						boolean statusDestroyed = false;
+						
+						
+						//checking if player 1 index are valid
+						
+						for(int j = 0; j<person[pilePerson].length; j++){
+							if(person[pilePerson][j].getName().equals("Destroyed") && j == 4){
+								statusDestroyed = true;
+								break;
+							}else if(person[pilePerson][j].getName().equals("Destroyed")){
+								continue;
+							}else{
+								player1I = pilePerson;
+								player1J = j;
+								statusDestroyed = false;
+								break;
+								
+							}
+						}
+						if(statusDestroyed == true){
+							Alert alert = new Alert(AlertType.INFORMATION);
+							alert.setTitle("Information Dialog");
+							alert.setHeaderText(null);
+							alert.setContentText("Your whole pile is destroyed. Pick from a different pile.");
+
+							alert.showAndWait();
+							
+						
+						
+						}
+						
+						
+						statusDestroyed = false;
+						//checking if AI index are valid
+						
+						for(int j = 0; j<AI[pileAI].length; j++){
+							if(AI[pileAI][j].getName().equals("Destroyed") && j == 4){
+								statusDestroyed = true;
+								break;
+							}else if(AI[pileAI][j].getName().equals("Destroyed")){
+								continue;
+							}else{
+								player2I = pileAI;
+								player2J = j;
+								break;
+							}
+						}
+						
+						if(statusDestroyed == true){
+							Alert alert = new Alert(AlertType.INFORMATION);
+							alert.setTitle("Information Dialog");
+							alert.setHeaderText(null);
+							alert.setContentText("Your whole pile is destroyed. Pick from a different pile.");
+
+							alert.showAndWait();
+						}
+						
+						
+						
+						
+						System.out.println("The attacking card is: " + person[player1I][player1J].getName());
+						System.out.println("The defending card is: " +AI[player2I][player2J].getName());
+						//cards are printed and values compared to. 
+						//cards are treated according to constraints
+						
+						if(person[player1I][player1J].getAttackVal() > AI[player2I][player2J].getDefVal() && !(person[player1I][player1J].getName().equals("Sheild")) && !(AI[player2I][player2J].getName().equals("Sheild"))){
+							//if your opponents crown is attacked then you win
+							if(AI[player2I][player2J].getName().equals("Crown")){
+								//System.out.println("Player 1 Wins");
+								Alert alert = new Alert(AlertType.INFORMATION);
+								alert.setTitle("Information Dialog");
+								alert.setHeaderText(null);
+								alert.setContentText("Player 1 Wins");
+
+								alert.showAndWait();
+								System.exit(0);
+							}
+							
+							
+							
+							AI[player2I][player2J].setName("Destroyed");
+							AI[player2I][player2J].setAttackVal(-100);
+							AI[player2I][player2J].setDefVal(-100);
+							
+							
+						}else if(person[player1I][player1J].getAttackVal() < AI[player2I][player2J].getDefVal() && !(person[player1I][player1J].getName().equals("Sheild")) && !(AI[player2I][player2J].getName().equals("Sheild"))){
+							//if you attack with you crown card your opponents non-crown cards then you lose
+							
+							if(person[player1I][player1J].getName().equals("Crown")){
+								System.out.println("Player 2 Wins");
+								System.exit(0);
+							}
+							
+							person[player1I][player1J].setName("Destroyed");
+							person[player1I][player1J].setAttackVal(-100);
+							person[player1I][player1J].setDefVal(-100);
+						}else if(person[player1I][player1J].getAttackVal() == AI[player2I][player2J].getDefVal() && !(person[player1I][player1J].getName().equals("Sheild")) && !(AI[player2I][player2J].getName().equals("Sheild"))){
+							
+							//if your opponents crown is attacked then you win
+							if(AI[player2I][player2J].getName().equals("Crown")){
+								//System.out.println("Player 1 Wins");
+								Alert alert = new Alert(AlertType.INFORMATION);
+								alert.setTitle("Information Dialog");
+								alert.setHeaderText(null);
+								alert.setContentText("Player 1 Wins");
+
+								alert.showAndWait();
+								System.exit(0);
+							}
+							
+							//if you attack with you crown card your opponents non-crown cards then you lose
+							
+							if(person[player1I][player1J].getName().equals("Crown")){
+								//System.out.println("Player 2 Wins");
+								Alert alert = new Alert(AlertType.INFORMATION);
+								alert.setTitle("Information Dialog");
+								alert.setHeaderText(null);
+								alert.setContentText("Player 2 Wins");
+
+								alert.showAndWait();
+								System.exit(0);
+							}
+							
+							//discarding both non-crown cards
+							
+							AI[player2I][player2J].setName("Destroyed");
+							AI[player2I][player2J].setAttackVal(-100);
+							AI[player2I][player2J].setDefVal(-100);
+							
+							person[player1I][player1J].setName("Destroyed");
+							person[player1I][player1J].setAttackVal(-100);
+							person[player1I][player1J].setDefVal(-100);
+							
+							
+						}else if((person[player1I][player1J].getName().equals("Sheild"))){
+							//if shield is used to attack, it is discarded.
+							person[player1I][player1J].setName("Destroyed");
+							person[player1I][player1J].setAttackVal(-100);
+							person[player1I][player1J].setDefVal(-100);
+						}else if((AI[player2I][player2J].getName().equals("Sheild")) && ((person[player1I][player1J].getName().equals("Archer")) || (person[player1I][player1J].getName().equals("Crown")))){
+							//if you are attacking with a crown
+							
+							if(person[player1I][player1J].getName().equals("Crown")){
+								//System.out.println("Player 2 Wins");
+								Alert alert = new Alert(AlertType.INFORMATION);
+								alert.setTitle("Information Dialog");
+								alert.setHeaderText(null);
+								alert.setContentText("Player 2 Wins");
+
+								alert.showAndWait();
+								System.exit(0);
+							}
+							
+							//if you are attacking with archer
+							if(person[player1I][player1J].getName().equals("Archer")){
+								//both are put back into their original piles
+								//continue;
+							}
+							
+							
+							
+						}else if((AI[player2I][player2J].getName().equals("Sheild"))){
+							
+							//both cards are discarded
+							AI[player2I][player2J].setName("Destroyed");
+							AI[player2I][player2J].setAttackVal(-100);
+							AI[player2I][player2J].setDefVal(-100);
+							
+							person[player1I][player1J].setName("Destroyed");
+							person[player1I][player1J].setAttackVal(-100);
+							person[player1I][player1J].setDefVal(-100);
+							
+							
+						}
+						
+						
+						
+						System.out.println("The attacking card after attack is: " + person[player1I][player1J].getName());
+						System.out.println("The defending card after attack is: " +AI[player2I][player2J].getName());
+						
+						//updating status
+						
+						AIPileStat();
+						playerPileStat();
+						
+						// ai attacks and player 1 defends.
+						 player1I = 0;
+						 player1J = 0;
+						 player2I = 0;
+						 player2J = 0;
+						 boolean status = true;
+						
+						 	//continue loop until a non-crown and non-destroyed card is selected from AI pile
+						do{
+							
+							//AI generating i and j index of attacking card from its own file.
+							 int aiPile = (int)(Math.random() * 5);
+							  
+							  
+								for(int j = 0; j<AI[aiPile].length; j++){
+									if((AI[aiPile][j].getName().equals("Destroyed") && j == 4) || AI[aiPile][j].getName().equals("Crown")){
+										break;
+									}else if(AI[aiPile][j].getName().equals("Destroyed")){
+										continue;
+									}else{
+										player2I = aiPile;
+										player2J = j;
+										status = false;
+										break;
+									}
+								}
+							  
+							  
+							
+							}while(status);
+						
+						status = true;
+						do{
+							
+							//AI generating i and j index of defending card from persons file
+							 int aiPile = (int)(Math.random() * 5);
+							  
+							  
+								for(int j = 0; j<person[aiPile].length; j++){
+									if((person[aiPile][j].getName().equals("Destroyed") && j == 4)){
+										break;
+									}else if(person[aiPile][j].getName().equals("Destroyed")){
+										continue;
+									}else{
+										player1I = aiPile;
+										player1J = j;
+										status = false;
+										break;
+									}
+								}
+							  
+							  
+							
+							}while(status);
+						
+						
+						System.out.println("I val: " + player2I);
+						System.out.println("J val: " + player2J);
+						System.out.println("The attacking Card chosen by AI is: " + AI[player2I][player2J].getName() );
+						
+						System.out.println("I val: " + player1I);
+						System.out.println("J val: " + player1J);
+						System.out.println("The defending Card chosen by AI is: " + person[player1I][player1J].getName() );
+						
+						//cards are printed and values compared to. 
+						//cards are treated according to constraints
+						
+						if(AI[player2I][player2J].getAttackVal() > person[player1I][player1J].getDefVal() && !(person[player1I][player1J].getName().equals("Sheild")) && !(AI[player2I][player2J].getName().equals("Sheild"))){
+							//if AI/player2 attack opponents crown card, then player 1 loses.
+							if(person[player1I][player1J].getName().equals("Crown")){
+								//System.out.println("Player 2 Wins");
+								Alert alert = new Alert(AlertType.INFORMATION);
+								alert.setTitle("Information Dialog");
+								alert.setHeaderText(null);
+								alert.setContentText("Player 2 Wins");
+
+								alert.showAndWait();
+								System.exit(0);
+							}
+							
+							
+							
+							person[player1I][player1J].setName("Destroyed");
+							person[player1I][player1J].setAttackVal(-100);
+							person[player1I][player1J].setDefVal(-100);
+							
+							
+						}else if(AI[player2I][player2J].getAttackVal() < person[player1I][player1J].getDefVal() && !(person[player1I][player1J].getName().equals("Sheild")) && !(AI[player2I][player2J].getName().equals("Sheild"))){
+							//if AI/player2 attacks with its own crown card, player 1 wins
+							
+							if(AI[player2I][player2J].getName().equals("Crown")){
+								System.out.println("Player 1 Wins");
+								System.exit(0);
+							}
+							
+							AI[player2I][player2J].setName("Destroyed");
+							AI[player2I][player2J].setAttackVal(-100);
+							AI[player2I][player2J].setDefVal(-100);
+						}else if(AI[player2I][player2J].getAttackVal() == person[player1I][player1J].getDefVal() && !(person[player1I][player1J].getName().equals("Sheild")) && !(AI[player2I][player2J].getName().equals("Sheild"))){
+							
+							//if ai attacks opponents crown card, it wins
+							if(person[player1I][player1J].getName().equals("Crown")){
+								//System.out.println("Player 2 Wins");
+								Alert alert = new Alert(AlertType.INFORMATION);
+								alert.setTitle("Information Dialog");
+								alert.setHeaderText(null);
+								alert.setContentText("Player 2 Wins");
+
+								alert.showAndWait();
+								System.exit(0);
+							}
+							
+							//if you ai attacks with its crown card player1 non-crown card, then it loses
+							
+							if(AI[player2I][player2J].getName().equals("Crown")){
+								//System.out.println("Player 1 Wins");
+								Alert alert = new Alert(AlertType.INFORMATION);
+								alert.setTitle("Information Dialog");
+								alert.setHeaderText(null);
+								alert.setContentText("Player 1 Wins");
+
+								alert.showAndWait();
+								System.exit(0);
+							}
+							
+							//discarding both non-crown cards
+							
+							AI[player2I][player2J].setName("Destroyed");
+							AI[player2I][player2J].setAttackVal(-100);
+							AI[player2I][player2J].setDefVal(-100);
+							
+							person[player1I][player1J].setName("Destroyed");
+							person[player1I][player1J].setAttackVal(-100);
+							person[player1I][player1J].setDefVal(-100);
+							
+							
+						}else if((AI[player2I][player2J].getName().equals("Sheild"))){
+							//if shield is used to attack, it is discarded.
+							AI[player2I][player2J].setName("Destroyed");
+							AI[player2I][player2J].setAttackVal(-100);
+							AI[player2I][player2J].setDefVal(-100);
+						}else if((person[player1I][player1J].getName().equals("Sheild")) && ((AI[player2I][player2J].getName().equals("Archer")) || (AI[player2I][player2J].getName().equals("Crown")))){
+							//if ai is attacking with crown card, it loses
+							
+							if(AI[player2I][player2J].getName().equals("Crown")){
+								//System.out.println("Player 1 Wins");
+								Alert alert = new Alert(AlertType.INFORMATION);
+								alert.setTitle("Information Dialog");
+								alert.setHeaderText(null);
+								alert.setContentText("Player 1 Wins");
+
+								alert.showAndWait();
+								System.exit(0);
+							}
+							
+							//if ai is attacking with archer, nothing happens.
+							if(AI[player2I][player2J].getName().equals("Archer")){
+								//both are put back into their original piles
+								//continue;
+							}
+							
+							
+							
+						}else if((person[player1I][player1J].getName().equals("Sheild"))){
+							
+							//both cards are discarded
+							AI[player2I][player2J].setName("Destroyed");
+							AI[player2I][player2J].setAttackVal(-100);
+							AI[player2I][player2J].setDefVal(-100);
+							
+							person[player1I][player1J].setName("Destroyed");
+							person[player1I][player1J].setAttackVal(-100);
+							person[player1I][player1J].setDefVal(-100);
+							
+							
+						}
+						
+						System.out.println("The attacking card after attack is: " + AI[player2I][player2J].getName());
+						System.out.println("The defending card after attack is: " +person[player1I][player1J].getName());
+						
+						//updating status 
+						AIPileStat();
+						playerPileStat();
+						//attackToTx.setText("");
+						//attackWithTx.setText("");
+						
+					}else{
+						attackToTx.setText("");
+						attackWithTx.setText("");
+						Alert alert = new Alert(AlertType.INFORMATION);
+						alert.setTitle("Information Dialog");
+						alert.setHeaderText(null);
+						alert.setContentText("Invalid Entry. Please Enter pile index number(0-4)");
+						
+						alert.showAndWait();
+					}
+					
+					
+					
+					
+					
+					
+					
+					
+				}else{
+					attackToTx.setText("");
+					attackWithTx.setText("");
+					Alert alert = new Alert(AlertType.INFORMATION);
+					alert.setTitle("Information Dialog");
+					alert.setHeaderText(null);
+					alert.setContentText("Piles for either AI or Player not filled!");
+					
+					alert.showAndWait();
+				}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			});
+			
+			
+			
+			
+			
+			
 			
 			
 			
@@ -262,7 +822,7 @@ public class ScrimishGUI extends Application{
 			if(personJ < 4){
 				personJ++;
 			
-			}else{
+			}else if(!(personI == 4 && personJ == 4)){
 				personJ = 0;
 				personI++;
 			}
@@ -277,7 +837,7 @@ public class ScrimishGUI extends Application{
 					playerPileTx.appendText("\n");
 					for(int j =0; j< person[i].length;j++){
 						
-						playerPileTx.appendText( person[i][j].getName() +" ");
+						playerPileTx.appendText( person[i][j].getName() +"   ");
 						
 						
 					}
@@ -289,6 +849,35 @@ public class ScrimishGUI extends Application{
 			
 			
 		}
+		
+	
+		
+		
+		
+		private void AIPileStat(){
+			AIpileTx.setText("");
+			try{
+				for(int i = 0; i< AI.length; i++){
+					AIpileTx.appendText("\n");
+					for(int j =0; j< AI[i].length;j++){
+						
+						AIpileTx.appendText( AI[i][j].getName() +"   ");
+						
+						
+					}
+				
+				}
+			}catch(Exception ex){
+				
+			}
+			
+			
+		}
+		
+		
+		
+		
+		
 		
 }
 		
