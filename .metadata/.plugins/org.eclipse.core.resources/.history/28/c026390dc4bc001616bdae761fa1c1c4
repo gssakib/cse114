@@ -1550,7 +1550,8 @@ public class ScrimishGUI extends Application{
 						
 						
 						}
-						
+						history.appendText("\n");
+						history.appendText("Player discards card\n");
 						
 						if((person[player1I][player1J].getName().equals("Crown"))){
 							Alert alert = new Alert(AlertType.INFORMATION);
@@ -1560,9 +1561,6 @@ public class ScrimishGUI extends Application{
 
 							alert.showAndWait();
 						}else{
-							
-							history.appendText("\n");
-							history.appendText("Player discards card\n");
 							//System.out.println("The chosen card to be discarded is: " + person[player1I][player1J].getName());
 							history.appendText("The chosen card to be discarded is: " + person[player1I][player1J].getName() + "\n");
 							

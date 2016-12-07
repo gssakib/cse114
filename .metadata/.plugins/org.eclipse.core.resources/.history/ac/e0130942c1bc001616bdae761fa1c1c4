@@ -164,7 +164,7 @@ public class Scrimish {
 			while(!(player1[indexPlayer1][4].getName().equals("Destroyed")) && !(player2[indexPlayer2][4].getName().equals("Destroyed")) ){
 				//player 1 attacks while ai defends..
 				System.out.println("");
-				System.out.println("Player attacks while the AI defends");
+				System.out.println("Player 1 attacks while the AI defends");
 				System.out.println("");
 				//choose card from top of one of my piles. 
 				boolean status = true;
@@ -297,7 +297,7 @@ public class Scrimish {
 					if(player1[player1I][player1J].getAttackVal() > player2[player2I][player2J].getDefVal() && !(player1[player1I][player1J].getName().equals("Sheild")) && !(player2[player2I][player2J].getName().equals("Sheild"))){
 						//if your opponents crown is attacked then you win
 						if(player2[player2I][player2J].getName().equals("Crown")){
-							System.out.println("Player Wins");
+							System.out.println("Player 1 Wins");
 							System.exit(0);
 						}
 						
@@ -312,7 +312,7 @@ public class Scrimish {
 						//if you attack with you crown card your opponents non-crown cards then you lose
 						
 						if(player1[player1I][player1J].getName().equals("Crown")){
-							System.out.println("AI Wins");
+							System.out.println("Player 2 Wins");
 							System.exit(0);
 						}
 						
@@ -323,14 +323,14 @@ public class Scrimish {
 						
 						//if your opponents crown is attacked then you win
 						if(player2[player2I][player2J].getName().equals("Crown")){
-							System.out.println("Player Wins");
+							System.out.println("Player 1 Wins");
 							System.exit(0);
 						}
 						
 						//if you attack with you crown card your opponents non-crown cards then you lose
 						
 						if(player1[player1I][player1J].getName().equals("Crown")){
-							System.out.println("AI Wins");
+							System.out.println("Player 2 Wins");
 							System.exit(0);
 						}
 						
@@ -354,7 +354,7 @@ public class Scrimish {
 						//if you are attacking with a crown
 						
 						if(player1[player1I][player1J].getName().equals("Crown")){
-							System.out.println("AI Wins");
+							System.out.println("Player 2 Wins");
 							System.exit(0);
 						}
 						
@@ -387,7 +387,7 @@ public class Scrimish {
 				
 				
 				System.out.println("");
-				System.out.println("Player attack ended. Now the AI attacks, while player defends");
+				System.out.println("Player 1 attack ended. Now the AI attacks, while player 1 defends");
 				System.out.println("");
 				// ai attacks and player 1 defends.
 				 player1I = 0;
@@ -419,8 +419,8 @@ public class Scrimish {
 					  
 					
 					}while(status);
-				System.out.println("(I val,J val) " + player2I +"," + player2J);
-				
+				System.out.println("I val: " + player2I);
+				System.out.println("J val: " + player2J);
 				System.out.println("The attacking Card chosen by AI is: " + player2[player2I][player2J].getName() );
 				//continue loop until a  non-destroyed card is selected from player 1 pile
 				status = true;
@@ -448,7 +448,8 @@ public class Scrimish {
 					}while(status);
 				
 				
-				System.out.println("(I val,J val) " + player1I +"," + player1J);
+				System.out.println("I val: " + player1I);
+				System.out.println("J val: " + player1J);
 				System.out.println("The defending Card chosen by AI is: " + player1[player1I][player1J].getName() );
 				
 				
@@ -458,7 +459,7 @@ public class Scrimish {
 				if(player2[player2I][player2J].getAttackVal() > player1[player1I][player1J].getDefVal() && !(player1[player1I][player1J].getName().equals("Sheild")) && !(player2[player2I][player2J].getName().equals("Sheild"))){
 					//if AI/player2 attack opponents crown card, then player 1 loses.
 					if(player1[player1I][player1J].getName().equals("Crown")){
-						System.out.println("AI Wins");
+						System.out.println("Player 2 Wins");
 						System.exit(0);
 					}
 					
@@ -473,7 +474,7 @@ public class Scrimish {
 					//if AI/player2 attacks with its own crown card, player 1 wins
 					
 					if(player2[player2I][player2J].getName().equals("Crown")){
-						System.out.println("Player Wins");
+						System.out.println("Player 1 Wins");
 						System.exit(0);
 					}
 					
@@ -484,14 +485,14 @@ public class Scrimish {
 					
 					//if ai attacks opponents crown card, it wins
 					if(player1[player1I][player1J].getName().equals("Crown")){
-						System.out.println("AI Wins");
+						System.out.println("Player 2 Wins");
 						System.exit(0);
 					}
 					
 					//if you ai attacks with its crown card player1 non-crown card, then it loses
 					
 					if(player2[player2I][player2J].getName().equals("Crown")){
-						System.out.println("Player Wins");
+						System.out.println("Player 1 Wins");
 						System.exit(0);
 					}
 					
@@ -515,7 +516,7 @@ public class Scrimish {
 					//if ai is attacking with crown card, it loses
 					
 					if(player2[player2I][player2J].getName().equals("Crown")){
-						System.out.println("Player Wins");
+						System.out.println("Player 1 Wins");
 						System.exit(0);
 					}
 					
@@ -557,7 +558,7 @@ public class Scrimish {
 			while(!(player1[indexPlayer1][4].getName().equals("Destroyed")) && !(player2[indexPlayer2][4].getName().equals("Destroyed")) ){
 				
 				System.out.println("");
-				System.out.println("AI attacks while the player defends");
+				System.out.println("AI attacks while the player 1 defends");
 				System.out.println("");
 				// ai attacks and player 1 defends.
 				 int player1I = 0;
@@ -589,7 +590,8 @@ public class Scrimish {
 					  
 					
 					}while(status);
-				System.out.println("(I val,J val) " + player2I +"," + player2J);
+				System.out.println("I val: " + player2I);
+				System.out.println("J val: " + player2J);
 				System.out.println("The attacking Card chosen by AI is: " + player2[player2I][player2J].getName() );
 				//continue loop until a  non-destroyed card is selected from player 1 pile
 				status = true;
@@ -618,7 +620,8 @@ public class Scrimish {
 					}while(status);
 				
 				
-				System.out.println("(I val,J val) " + player1I +"," + player1J);
+				System.out.println("I val: " + player1I);
+				System.out.println("J val: " + player1J);
 				System.out.println("The defending Card chosen by AI is: " + player1[player1I][player1J].getName() );
 				
 				
@@ -628,7 +631,7 @@ public class Scrimish {
 				if(player2[player2I][player2J].getAttackVal() > player1[player1I][player1J].getDefVal() && !(player1[player1I][player1J].getName().equals("Sheild")) && !(player2[player2I][player2J].getName().equals("Sheild"))){
 					//if AI/player2 attack opponents crown card, then player 1 loses.
 					if(player1[player1I][player1J].getName().equals("Crown")){
-						System.out.println("AI Wins");
+						System.out.println("Player 2 Wins");
 						System.exit(0);
 					}
 					
@@ -643,7 +646,7 @@ public class Scrimish {
 					//if AI/player2 attacks with its own crown card, player 1 wins
 					
 					if(player2[player2I][player2J].getName().equals("Crown")){
-						System.out.println("Player Wins");
+						System.out.println("Player 1 Wins");
 						System.exit(0);
 					}
 					
@@ -654,14 +657,14 @@ public class Scrimish {
 					
 					//if ai attacks opponents crown card, it wins
 					if(player1[player1I][player1J].getName().equals("Crown")){
-						System.out.println("AI Wins");
+						System.out.println("Player 2 Wins");
 						System.exit(0);
 					}
 					
 					//if you ai attacks with its crown card player1 non-crown card, then it loses
 					
 					if(player2[player2I][player2J].getName().equals("Crown")){
-						System.out.println("Player Wins");
+						System.out.println("Player 1 Wins");
 						System.exit(0);
 					}
 					
@@ -685,7 +688,7 @@ public class Scrimish {
 					//if ai is attacking with crown card, it loses
 					
 					if(player2[player2I][player2J].getName().equals("Crown")){
-						System.out.println("Player Wins");
+						System.out.println("Player 1 Wins");
 						System.exit(0);
 					}
 					
@@ -847,7 +850,7 @@ public class Scrimish {
 					if(player1[player1I][player1J].getAttackVal() > player2[player2I][player2J].getDefVal() && !(player1[player1I][player1J].getName().equals("Sheild")) && !(player2[player2I][player2J].getName().equals("Sheild"))){
 						//if your opponents crown is attacked then you win
 						if(player2[player2I][player2J].getName().equals("Crown")){
-							System.out.println("Player Wins");
+							System.out.println("Player 1 Wins");
 							System.exit(0);
 						}
 						
@@ -862,7 +865,7 @@ public class Scrimish {
 						//if you attack with you crown card your opponents non-crown cards then you lose
 						
 						if(player1[player1I][player1J].getName().equals("Crown")){
-							System.out.println("AI Wins");
+							System.out.println("Player 2 Wins");
 							System.exit(0);
 						}
 						
@@ -873,14 +876,14 @@ public class Scrimish {
 						
 						//if your opponents crown is attacked then you win
 						if(player2[player2I][player2J].getName().equals("Crown")){
-							System.out.println("Player Wins");
+							System.out.println("Player 1 Wins");
 							System.exit(0);
 						}
 						
 						//if you attack with you crown card your opponents non-crown cards then you lose
 						
 						if(player1[player1I][player1J].getName().equals("Crown")){
-							System.out.println("AI Wins");
+							System.out.println("Player 2 Wins");
 							System.exit(0);
 						}
 						
@@ -904,7 +907,7 @@ public class Scrimish {
 						//if you are attacking with a crown
 						
 						if(player1[player1I][player1J].getName().equals("Crown")){
-							System.out.println("AI Wins");
+							System.out.println("Player 2 Wins");
 							System.exit(0);
 						}
 						

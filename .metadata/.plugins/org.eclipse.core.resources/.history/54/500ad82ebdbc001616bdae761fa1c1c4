@@ -539,7 +539,7 @@ public class ScrimishGUI extends Application{
 							
 							
 							
-							history.appendText("Player attacks while the AI defends\n");
+							history.appendText("Player 1 attacks while the AI defends\n");
 							history.appendText("\n");
 							
 							//System.out.println("The attacking card is: " + person[player1I][player1J].getName());
@@ -557,7 +557,7 @@ public class ScrimishGUI extends Application{
 									Alert alert = new Alert(AlertType.INFORMATION);
 									alert.setTitle("Information Dialog");
 									alert.setHeaderText(null);
-									alert.setContentText("Player Wins");
+									alert.setContentText("Player 1 Wins");
 
 									alert.showAndWait();
 									System.exit(0);
@@ -578,7 +578,7 @@ public class ScrimishGUI extends Application{
 									Alert alert = new Alert(AlertType.INFORMATION);
 									alert.setTitle("Information Dialog");
 									alert.setHeaderText(null);
-									alert.setContentText("AI Wins");
+									alert.setContentText("Player 2 Wins");
 
 									alert.showAndWait();
 									System.exit(0);
@@ -598,7 +598,7 @@ public class ScrimishGUI extends Application{
 									Alert alert = new Alert(AlertType.INFORMATION);
 									alert.setTitle("Information Dialog");
 									alert.setHeaderText(null);
-									alert.setContentText("Player Wins");
+									alert.setContentText("Player 1 Wins");
 
 									alert.showAndWait();
 									System.exit(0);
@@ -611,7 +611,7 @@ public class ScrimishGUI extends Application{
 									Alert alert = new Alert(AlertType.INFORMATION);
 									alert.setTitle("Information Dialog");
 									alert.setHeaderText(null);
-									alert.setContentText("AI Wins");
+									alert.setContentText("Player 2 Wins");
 
 									alert.showAndWait();
 									System.exit(0);
@@ -641,7 +641,7 @@ public class ScrimishGUI extends Application{
 									Alert alert = new Alert(AlertType.INFORMATION);
 									alert.setTitle("Information Dialog");
 									alert.setHeaderText(null);
-									alert.setContentText("AI Wins");
+									alert.setContentText("Player 2 Wins");
 
 									alert.showAndWait();
 									System.exit(0);
@@ -766,7 +766,7 @@ public class ScrimishGUI extends Application{
 									Alert alert = new Alert(AlertType.INFORMATION);
 									alert.setTitle("Information Dialog");
 									alert.setHeaderText(null);
-									alert.setContentText("AI Wins");
+									alert.setContentText("Player 2 Wins");
 
 									alert.showAndWait();
 									System.exit(0);
@@ -783,7 +783,7 @@ public class ScrimishGUI extends Application{
 								//if AI/player2 attacks with its own crown card, player 1 wins
 								
 								if(AI[player2I][player2J].getName().equals("Crown")){
-									System.out.println("Player Wins");
+									System.out.println("Player 1 Wins");
 									System.exit(0);
 								}
 								
@@ -798,7 +798,7 @@ public class ScrimishGUI extends Application{
 									Alert alert = new Alert(AlertType.INFORMATION);
 									alert.setTitle("Information Dialog");
 									alert.setHeaderText(null);
-									alert.setContentText("AI Wins");
+									alert.setContentText("Player 2 Wins");
 
 									alert.showAndWait();
 									System.exit(0);
@@ -841,7 +841,7 @@ public class ScrimishGUI extends Application{
 									Alert alert = new Alert(AlertType.INFORMATION);
 									alert.setTitle("Information Dialog");
 									alert.setHeaderText(null);
-									alert.setContentText("Player Wins");
+									alert.setContentText("Player 1 Wins");
 
 									alert.showAndWait();
 									System.exit(0);
@@ -1083,7 +1083,7 @@ public class ScrimishGUI extends Application{
 								Alert alert = new Alert(AlertType.INFORMATION);
 								alert.setTitle("Information Dialog");
 								alert.setHeaderText(null);
-								alert.setContentText("AI Wins");
+								alert.setContentText("Player 2 Wins");
 
 								alert.showAndWait();
 								System.exit(0);
@@ -1104,7 +1104,7 @@ public class ScrimishGUI extends Application{
 								Alert alert = new Alert(AlertType.INFORMATION);
 								alert.setTitle("Information Dialog");
 								alert.setHeaderText(null);
-								alert.setContentText("Player Wins");
+								alert.setContentText("Player 1 Wins");
 
 								alert.showAndWait();
 								System.exit(0);
@@ -1121,7 +1121,7 @@ public class ScrimishGUI extends Application{
 								Alert alert = new Alert(AlertType.INFORMATION);
 								alert.setTitle("Information Dialog");
 								alert.setHeaderText(null);
-								alert.setContentText("AI Wins");
+								alert.setContentText("Player 2 Wins");
 
 								alert.showAndWait();
 								System.exit(0);
@@ -1134,7 +1134,7 @@ public class ScrimishGUI extends Application{
 								Alert alert = new Alert(AlertType.INFORMATION);
 								alert.setTitle("Information Dialog");
 								alert.setHeaderText(null);
-								alert.setContentText("Player Wins");
+								alert.setContentText("Player 1 Wins");
 
 								alert.showAndWait();
 								System.exit(0);
@@ -1164,7 +1164,7 @@ public class ScrimishGUI extends Application{
 								Alert alert = new Alert(AlertType.INFORMATION);
 								alert.setTitle("Information Dialog");
 								alert.setHeaderText(null);
-								alert.setContentText("Player Wins");
+								alert.setContentText("Player 1 Wins");
 
 								alert.showAndWait();
 								System.exit(0);
@@ -1312,7 +1312,7 @@ public class ScrimishGUI extends Application{
 								Alert alert = new Alert(AlertType.INFORMATION);
 								alert.setTitle("Information Dialog");
 								alert.setHeaderText(null);
-								alert.setContentText("AI Wins");
+								alert.setContentText("Player 2 Wins");
 
 								alert.showAndWait();
 								System.exit(0);
@@ -1329,7 +1329,7 @@ public class ScrimishGUI extends Application{
 								Alert alert = new Alert(AlertType.INFORMATION);
 								alert.setTitle("Information Dialog");
 								alert.setHeaderText(null);
-								alert.setContentText("Player Wins");
+								alert.setContentText("Player 1 Wins");
 
 								alert.showAndWait();
 								System.exit(0);
@@ -1342,7 +1342,7 @@ public class ScrimishGUI extends Application{
 								Alert alert = new Alert(AlertType.INFORMATION);
 								alert.setTitle("Information Dialog");
 								alert.setHeaderText(null);
-								alert.setContentText("AI Wins");
+								alert.setContentText("Player 2 Wins");
 
 								alert.showAndWait();
 								System.exit(0);
@@ -1372,7 +1372,7 @@ public class ScrimishGUI extends Application{
 								Alert alert = new Alert(AlertType.INFORMATION);
 								alert.setTitle("Information Dialog");
 								alert.setHeaderText(null);
-								alert.setContentText("AI Wins");
+								alert.setContentText("Player 2 Wins");
 
 								alert.showAndWait();
 								System.exit(0);
@@ -1551,7 +1551,6 @@ public class ScrimishGUI extends Application{
 						
 						}
 						
-						
 						if((person[player1I][player1J].getName().equals("Crown"))){
 							Alert alert = new Alert(AlertType.INFORMATION);
 							alert.setTitle("Information Dialog");
@@ -1560,9 +1559,6 @@ public class ScrimishGUI extends Application{
 
 							alert.showAndWait();
 						}else{
-							
-							history.appendText("\n");
-							history.appendText("Player discards card\n");
 							//System.out.println("The chosen card to be discarded is: " + person[player1I][player1J].getName());
 							history.appendText("The chosen card to be discarded is: " + person[player1I][player1J].getName() + "\n");
 							
@@ -1575,9 +1571,7 @@ public class ScrimishGUI extends Application{
 							playerPileStat();
 						
 						
-							history.appendText("\n");
-							history.appendText("AI attacks now while Player defends\n");
-							history.appendText("\n");
+						
 							
 							
 							// ai attacks and player 1 defends.
@@ -1661,7 +1655,7 @@ public class ScrimishGUI extends Application{
 									Alert alert = new Alert(AlertType.INFORMATION);
 									alert.setTitle("Information Dialog");
 									alert.setHeaderText(null);
-									alert.setContentText("AI Wins");
+									alert.setContentText("Player 2 Wins");
 
 									alert.showAndWait();
 									System.exit(0);
@@ -1682,7 +1676,7 @@ public class ScrimishGUI extends Application{
 									Alert alert = new Alert(AlertType.INFORMATION);
 									alert.setTitle("Information Dialog");
 									alert.setHeaderText(null);
-									alert.setContentText("Player Wins");
+									alert.setContentText("Player 1 Wins");
 
 									alert.showAndWait();
 									System.exit(0);
@@ -1699,7 +1693,7 @@ public class ScrimishGUI extends Application{
 									Alert alert = new Alert(AlertType.INFORMATION);
 									alert.setTitle("Information Dialog");
 									alert.setHeaderText(null);
-									alert.setContentText("AI Wins");
+									alert.setContentText("Player 2 Wins");
 
 									alert.showAndWait();
 									System.exit(0);
@@ -1712,7 +1706,7 @@ public class ScrimishGUI extends Application{
 									Alert alert = new Alert(AlertType.INFORMATION);
 									alert.setTitle("Information Dialog");
 									alert.setHeaderText(null);
-									alert.setContentText("Player Wins");
+									alert.setContentText("Player 1 Wins");
 
 									alert.showAndWait();
 									System.exit(0);
@@ -1742,7 +1736,7 @@ public class ScrimishGUI extends Application{
 									Alert alert = new Alert(AlertType.INFORMATION);
 									alert.setTitle("Information Dialog");
 									alert.setHeaderText(null);
-									alert.setContentText("Player Wins");
+									alert.setContentText("Player 1 Wins");
 
 									alert.showAndWait();
 									System.exit(0);
@@ -1775,9 +1769,6 @@ public class ScrimishGUI extends Application{
 							history.appendText("The attacking card after attack is: " + AI[player2I][player2J].getName() + "\n");
 							history.appendText("The defending card after attack is: " +person[player1I][player1J].getName() + "\n");
 							//updating status 
-							history.appendText("\n");
-							history.appendText("End of Round\n");
-							history.appendText("\n");
 							AIPileStat();
 							playerPileStat();
 						}

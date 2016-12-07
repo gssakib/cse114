@@ -539,11 +539,9 @@ public class ScrimishGUI extends Application{
 							
 							
 							
-							history.appendText("Player attacks while the AI defends\n");
-							history.appendText("\n");
 							
-							//System.out.println("The attacking card is: " + person[player1I][player1J].getName());
-							//System.out.println("The defending card is: " +AI[player2I][player2J].getName());
+							System.out.println("The attacking card is: " + person[player1I][player1J].getName());
+							System.out.println("The defending card is: " +AI[player2I][player2J].getName());
 							
 							history.appendText("The attacking card is: " + person[player1I][player1J].getName() + "\n");
 							history.appendText("The defending card is: " + AI[player2I][player2J].getName() + "\n");
@@ -557,7 +555,7 @@ public class ScrimishGUI extends Application{
 									Alert alert = new Alert(AlertType.INFORMATION);
 									alert.setTitle("Information Dialog");
 									alert.setHeaderText(null);
-									alert.setContentText("Player Wins");
+									alert.setContentText("Player 1 Wins");
 
 									alert.showAndWait();
 									System.exit(0);
@@ -574,17 +572,8 @@ public class ScrimishGUI extends Application{
 								//if you attack with you crown card your opponents non-crown cards then you lose
 								
 								if(person[player1I][player1J].getName().equals("Crown")){
-									//System.out.println("Player 2 Wins");
-									Alert alert = new Alert(AlertType.INFORMATION);
-									alert.setTitle("Information Dialog");
-									alert.setHeaderText(null);
-									alert.setContentText("AI Wins");
-
-									alert.showAndWait();
+									System.out.println("Player 2 Wins");
 									System.exit(0);
-									
-									
-									
 								}
 								
 								person[player1I][player1J].setName("Destroyed");
@@ -598,7 +587,7 @@ public class ScrimishGUI extends Application{
 									Alert alert = new Alert(AlertType.INFORMATION);
 									alert.setTitle("Information Dialog");
 									alert.setHeaderText(null);
-									alert.setContentText("Player Wins");
+									alert.setContentText("Player 1 Wins");
 
 									alert.showAndWait();
 									System.exit(0);
@@ -611,7 +600,7 @@ public class ScrimishGUI extends Application{
 									Alert alert = new Alert(AlertType.INFORMATION);
 									alert.setTitle("Information Dialog");
 									alert.setHeaderText(null);
-									alert.setContentText("AI Wins");
+									alert.setContentText("Player 2 Wins");
 
 									alert.showAndWait();
 									System.exit(0);
@@ -641,7 +630,7 @@ public class ScrimishGUI extends Application{
 									Alert alert = new Alert(AlertType.INFORMATION);
 									alert.setTitle("Information Dialog");
 									alert.setHeaderText(null);
-									alert.setContentText("AI Wins");
+									alert.setContentText("Player 2 Wins");
 
 									alert.showAndWait();
 									System.exit(0);
@@ -671,16 +660,12 @@ public class ScrimishGUI extends Application{
 							
 							
 							
-							//System.out.println("The attacking card after attack is: " + person[player1I][player1J].getName());
-							//System.out.println("The defending card after attack is: " +AI[player2I][player2J].getName());
+							System.out.println("The attacking card after attack is: " + person[player1I][player1J].getName());
+							System.out.println("The defending card after attack is: " +AI[player2I][player2J].getName());
 							
 							history.appendText("The attacking card after attack is: " + person[player1I][player1J].getName() + "\n");
 							history.appendText("The defending card after attack is: " +AI[player2I][player2J].getName()+ "\n");
 							//updating status
-							
-							history.appendText("\n");
-							history.appendText("AI attacks now while Player defends\n");
-							history.appendText("\n");
 							
 							AIPileStat();
 							playerPileStat();
@@ -741,20 +726,20 @@ public class ScrimishGUI extends Application{
 								}while(status);
 							
 							
-							//System.out.println("I val: " + player2I);
-							//System.out.println("J val: " + player2J);
-							//System.out.println("The attacking Card chosen by AI is: " + AI[player2I][player2J].getName() );
-							history.appendText("(I,J) val of attacking Card Chosen by AI: " +  player2I + "," + player2J + "\n");
+							System.out.println("I val: " + player2I);
+							System.out.println("J val: " + player2J);
+							System.out.println("The attacking Card chosen by AI is: " + AI[player2I][player2J].getName() );
+							history.appendText("I val of attacking Card Chosen by AI: " +  player2I + "," + "J val of attacking Card Chosen by AI: " + player2J + "\n");
 							history.appendText("The attacking Card chosen by AI is: " + AI[player2I][player2J].getName() + "\n");
 							
 							
 							
 							
 							
-							//System.out.println("I val: " + player1I);
-							//System.out.println("J val: " + player1J);
-							//System.out.println("The defending Card chosen by AI is: " + person[player1I][player1J].getName() );
-							history.appendText("(I,J) val of defending Card Chosen by AI: " +  player1I + "," + player1J + "\n");
+							System.out.println("I val: " + player1I);
+							System.out.println("J val: " + player1J);
+							System.out.println("The defending Card chosen by AI is: " + person[player1I][player1J].getName() );
+							history.appendText("I val of defending Card Chosen by AI: " +  player1I + "," + "J val of defending Card Chosen by AI: " + player1J + "\n");
 							history.appendText("The defending Card chosen by AI is: " + person[player1I][player1J].getName() + "\n");
 							//cards are printed and values compared to. 
 							//cards are treated according to constraints
@@ -766,7 +751,7 @@ public class ScrimishGUI extends Application{
 									Alert alert = new Alert(AlertType.INFORMATION);
 									alert.setTitle("Information Dialog");
 									alert.setHeaderText(null);
-									alert.setContentText("AI Wins");
+									alert.setContentText("Player 2 Wins");
 
 									alert.showAndWait();
 									System.exit(0);
@@ -783,7 +768,7 @@ public class ScrimishGUI extends Application{
 								//if AI/player2 attacks with its own crown card, player 1 wins
 								
 								if(AI[player2I][player2J].getName().equals("Crown")){
-									System.out.println("Player Wins");
+									System.out.println("Player 1 Wins");
 									System.exit(0);
 								}
 								
@@ -798,7 +783,7 @@ public class ScrimishGUI extends Application{
 									Alert alert = new Alert(AlertType.INFORMATION);
 									alert.setTitle("Information Dialog");
 									alert.setHeaderText(null);
-									alert.setContentText("AI Wins");
+									alert.setContentText("Player 2 Wins");
 
 									alert.showAndWait();
 									System.exit(0);
@@ -841,7 +826,7 @@ public class ScrimishGUI extends Application{
 									Alert alert = new Alert(AlertType.INFORMATION);
 									alert.setTitle("Information Dialog");
 									alert.setHeaderText(null);
-									alert.setContentText("Player Wins");
+									alert.setContentText("Player 1 Wins");
 
 									alert.showAndWait();
 									System.exit(0);
@@ -869,16 +854,12 @@ public class ScrimishGUI extends Application{
 								
 							}
 							
-							//System.out.println("The attacking card after attack is: " + AI[player2I][player2J].getName());
-							//System.out.println("The defending card after attack is: " +person[player1I][player1J].getName());
+							System.out.println("The attacking card after attack is: " + AI[player2I][player2J].getName());
+							System.out.println("The defending card after attack is: " +person[player1I][player1J].getName());
 							
 							history.appendText("The attacking card after attack is: " + AI[player2I][player2J].getName() + "\n");
 							history.appendText("The defending card after attack is: " +person[player1I][player1J].getName() + "\n");
 							//updating status 
-							history.appendText("\n");
-							history.appendText("End of round");
-							history.appendText("\n");
-							
 							AIPileStat();
 							playerPileStat();
 							//attackToTx.setText("");
@@ -996,8 +977,6 @@ public class ScrimishGUI extends Application{
 						
 						
 						
-						history.appendText("AI attacks while Player defends\n");
-						history.appendText("\n");
 						
 						
 						
@@ -1058,20 +1037,20 @@ public class ScrimishGUI extends Application{
 							}while(status);
 						
 						
-						//System.out.println("I val: " + player2I);
-						//System.out.println("J val: " + player2J);
-						//System.out.println("The attacking Card chosen by AI is: " + AI[player2I][player2J].getName() );
-						history.appendText("(I,J) val of attacking Card Chosen by AI: " +  player2I + ","  + player2J + "\n");
+						System.out.println("I val: " + player2I);
+						System.out.println("J val: " + player2J);
+						System.out.println("The attacking Card chosen by AI is: " + AI[player2I][player2J].getName() );
+						history.appendText("I val of attacking Card Chosen by AI: " +  player2I + "," + "J val of attacking Card Chosen by AI: " + player2J + "\n");
 						history.appendText("The attacking Card chosen by AI is: " + AI[player2I][player2J].getName() + "\n");
 						
 						
 						
 						
 						
-						//System.out.println("I val: " + player1I);
-						//System.out.println("J val: " + player1J);
-						//System.out.println("The defending Card chosen by AI is: " + person[player1I][player1J].getName() );
-						history.appendText("(I,J) val of defending Card Chosen by AI: " +  player1I + "," +  player1J + "\n");
+						System.out.println("I val: " + player1I);
+						System.out.println("J val: " + player1J);
+						System.out.println("The defending Card chosen by AI is: " + person[player1I][player1J].getName() );
+						history.appendText("I val of defending Card Chosen by AI: " +  player1I + "," + "J val of defending Card Chosen by AI: " + player1J + "\n");
 						history.appendText("The defending Card chosen by AI is: " + person[player1I][player1J].getName() + "\n");
 						//cards are printed and values compared to. 
 						//cards are treated according to constraints
@@ -1083,7 +1062,7 @@ public class ScrimishGUI extends Application{
 								Alert alert = new Alert(AlertType.INFORMATION);
 								alert.setTitle("Information Dialog");
 								alert.setHeaderText(null);
-								alert.setContentText("AI Wins");
+								alert.setContentText("Player 2 Wins");
 
 								alert.showAndWait();
 								System.exit(0);
@@ -1100,13 +1079,7 @@ public class ScrimishGUI extends Application{
 							//if AI/player2 attacks with its own crown card, player 1 wins
 							
 							if(AI[player2I][player2J].getName().equals("Crown")){
-								//System.out.println("Player 1 Wins");
-								Alert alert = new Alert(AlertType.INFORMATION);
-								alert.setTitle("Information Dialog");
-								alert.setHeaderText(null);
-								alert.setContentText("Player Wins");
-
-								alert.showAndWait();
+								System.out.println("Player 1 Wins");
 								System.exit(0);
 							}
 							
@@ -1121,7 +1094,7 @@ public class ScrimishGUI extends Application{
 								Alert alert = new Alert(AlertType.INFORMATION);
 								alert.setTitle("Information Dialog");
 								alert.setHeaderText(null);
-								alert.setContentText("AI Wins");
+								alert.setContentText("Player 2 Wins");
 
 								alert.showAndWait();
 								System.exit(0);
@@ -1134,7 +1107,7 @@ public class ScrimishGUI extends Application{
 								Alert alert = new Alert(AlertType.INFORMATION);
 								alert.setTitle("Information Dialog");
 								alert.setHeaderText(null);
-								alert.setContentText("Player Wins");
+								alert.setContentText("Player 1 Wins");
 
 								alert.showAndWait();
 								System.exit(0);
@@ -1164,7 +1137,7 @@ public class ScrimishGUI extends Application{
 								Alert alert = new Alert(AlertType.INFORMATION);
 								alert.setTitle("Information Dialog");
 								alert.setHeaderText(null);
-								alert.setContentText("Player Wins");
+								alert.setContentText("Player 1 Wins");
 
 								alert.showAndWait();
 								System.exit(0);
@@ -1192,8 +1165,8 @@ public class ScrimishGUI extends Application{
 							
 						}
 						
-						//System.out.println("The attacking card after attack is: " + AI[player2I][player2J].getName());
-						//System.out.println("The defending card after attack is: " +person[player1I][player1J].getName());
+						System.out.println("The attacking card after attack is: " + AI[player2I][player2J].getName());
+						System.out.println("The defending card after attack is: " +person[player1I][player1J].getName());
 						
 						history.appendText("The attacking card after attack is: " + AI[player2I][player2J].getName() + "\n");
 						history.appendText("The defending card after attack is: " +person[player1I][player1J].getName() + "\n");
@@ -1204,9 +1177,7 @@ public class ScrimishGUI extends Application{
 						//attackWithTx.setText("");
 						
 						
-						history.appendText("\n");
-						history.appendText("Player attacks now while AI defends\n");
-						history.appendText("\n");
+						
 						
 						//player 1 now attacks while ai defends
 						
@@ -1276,8 +1247,8 @@ public class ScrimishGUI extends Application{
 						
 						
 						
-						//System.out.println("The attacking card is: " + person[player1I][player1J].getName());
-						//System.out.println("The defending card is: " +AI[player2I][player2J].getName());
+						System.out.println("The attacking card is: " + person[player1I][player1J].getName());
+						System.out.println("The defending card is: " +AI[player2I][player2J].getName());
 						
 						history.appendText("The attacking card is: " + person[player1I][player1J].getName() + "\n");
 						history.appendText("The defending card is: " + AI[player2I][player2J].getName() + "\n");
@@ -1308,13 +1279,7 @@ public class ScrimishGUI extends Application{
 							//if you attack with you crown card your opponents non-crown cards then you lose
 							
 							if(person[player1I][player1J].getName().equals("Crown")){
-								//System.out.println("Player 2 Wins");
-								Alert alert = new Alert(AlertType.INFORMATION);
-								alert.setTitle("Information Dialog");
-								alert.setHeaderText(null);
-								alert.setContentText("AI Wins");
-
-								alert.showAndWait();
+								System.out.println("Player 2 Wins");
 								System.exit(0);
 							}
 							
@@ -1329,7 +1294,7 @@ public class ScrimishGUI extends Application{
 								Alert alert = new Alert(AlertType.INFORMATION);
 								alert.setTitle("Information Dialog");
 								alert.setHeaderText(null);
-								alert.setContentText("Player Wins");
+								alert.setContentText("Player 1 Wins");
 
 								alert.showAndWait();
 								System.exit(0);
@@ -1342,7 +1307,7 @@ public class ScrimishGUI extends Application{
 								Alert alert = new Alert(AlertType.INFORMATION);
 								alert.setTitle("Information Dialog");
 								alert.setHeaderText(null);
-								alert.setContentText("AI Wins");
+								alert.setContentText("Player 2 Wins");
 
 								alert.showAndWait();
 								System.exit(0);
@@ -1372,7 +1337,7 @@ public class ScrimishGUI extends Application{
 								Alert alert = new Alert(AlertType.INFORMATION);
 								alert.setTitle("Information Dialog");
 								alert.setHeaderText(null);
-								alert.setContentText("AI Wins");
+								alert.setContentText("Player 2 Wins");
 
 								alert.showAndWait();
 								System.exit(0);
@@ -1402,15 +1367,13 @@ public class ScrimishGUI extends Application{
 						
 						
 						
-						//System.out.println("The attacking card after attack is: " + person[player1I][player1J].getName());
-						//System.out.println("The defending card after attack is: " +AI[player2I][player2J].getName());
+						System.out.println("The attacking card after attack is: " + person[player1I][player1J].getName());
+						System.out.println("The defending card after attack is: " +AI[player2I][player2J].getName());
 						
 						history.appendText("The attacking card after attack is: " + person[player1I][player1J].getName() + "\n");
 						history.appendText("The defending card after attack is: " +AI[player2I][player2J].getName()+ "\n");
 						//updating status
-						history.appendText("\n");
-						history.appendText("End of round\n");
-						history.appendText("\n");
+						
 						AIPileStat();
 						playerPileStat();
 						
@@ -1551,7 +1514,6 @@ public class ScrimishGUI extends Application{
 						
 						}
 						
-						
 						if((person[player1I][player1J].getName().equals("Crown"))){
 							Alert alert = new Alert(AlertType.INFORMATION);
 							alert.setTitle("Information Dialog");
@@ -1560,10 +1522,7 @@ public class ScrimishGUI extends Application{
 
 							alert.showAndWait();
 						}else{
-							
-							history.appendText("\n");
-							history.appendText("Player discards card\n");
-							//System.out.println("The chosen card to be discarded is: " + person[player1I][player1J].getName());
+							System.out.println("The chosen card to be discarded is: " + person[player1I][player1J].getName());
 							history.appendText("The chosen card to be discarded is: " + person[player1I][player1J].getName() + "\n");
 							
 							
@@ -1575,9 +1534,7 @@ public class ScrimishGUI extends Application{
 							playerPileStat();
 						
 						
-							history.appendText("\n");
-							history.appendText("AI attacks now while Player defends\n");
-							history.appendText("\n");
+						
 							
 							
 							// ai attacks and player 1 defends.
@@ -1636,20 +1593,20 @@ public class ScrimishGUI extends Application{
 								}while(status);
 							
 							
-							//System.out.println("I val: " + player2I);
-							//System.out.println("J val: " + player2J);
-							//System.out.println("The attacking Card chosen by AI is: " + AI[player2I][player2J].getName() );
-							history.appendText("(I,J) val of attacking Card Chosen by AI: " +  player2I + ","  + player2J + "\n");
+							System.out.println("I val: " + player2I);
+							System.out.println("J val: " + player2J);
+							System.out.println("The attacking Card chosen by AI is: " + AI[player2I][player2J].getName() );
+							history.appendText("I val of attacking Card Chosen by AI: " +  player2I + "," + "J val of attacking Card Chosen by AI: " + player2J + "\n");
 							history.appendText("The attacking Card chosen by AI is: " + AI[player2I][player2J].getName() + "\n");
 							
 							
 							
 							
 							
-							//System.out.println("I val: " + player1I);
-							//System.out.println("J val: " + player1J);
-							//System.out.println("The defending Card chosen by AI is: " + person[player1I][player1J].getName() );
-							history.appendText("(I,J) val of defending Card Chosen by AI: " +  player1I + ","  + player1J + "\n");
+							System.out.println("I val: " + player1I);
+							System.out.println("J val: " + player1J);
+							System.out.println("The defending Card chosen by AI is: " + person[player1I][player1J].getName() );
+							history.appendText("I val of defending Card Chosen by AI: " +  player1I + "," + "J val of defending Card Chosen by AI: " + player1J + "\n");
 							history.appendText("The defending Card chosen by AI is: " + person[player1I][player1J].getName() + "\n");
 							//cards are printed and values compared to. 
 							//cards are treated according to constraints
@@ -1661,7 +1618,7 @@ public class ScrimishGUI extends Application{
 									Alert alert = new Alert(AlertType.INFORMATION);
 									alert.setTitle("Information Dialog");
 									alert.setHeaderText(null);
-									alert.setContentText("AI Wins");
+									alert.setContentText("Player 2 Wins");
 
 									alert.showAndWait();
 									System.exit(0);
@@ -1678,13 +1635,7 @@ public class ScrimishGUI extends Application{
 								//if AI/player2 attacks with its own crown card, player 1 wins
 								
 								if(AI[player2I][player2J].getName().equals("Crown")){
-									//System.out.println("Player 1 Wins");
-									Alert alert = new Alert(AlertType.INFORMATION);
-									alert.setTitle("Information Dialog");
-									alert.setHeaderText(null);
-									alert.setContentText("Player Wins");
-
-									alert.showAndWait();
+									System.out.println("Player 1 Wins");
 									System.exit(0);
 								}
 								
@@ -1699,7 +1650,7 @@ public class ScrimishGUI extends Application{
 									Alert alert = new Alert(AlertType.INFORMATION);
 									alert.setTitle("Information Dialog");
 									alert.setHeaderText(null);
-									alert.setContentText("AI Wins");
+									alert.setContentText("Player 2 Wins");
 
 									alert.showAndWait();
 									System.exit(0);
@@ -1712,7 +1663,7 @@ public class ScrimishGUI extends Application{
 									Alert alert = new Alert(AlertType.INFORMATION);
 									alert.setTitle("Information Dialog");
 									alert.setHeaderText(null);
-									alert.setContentText("Player Wins");
+									alert.setContentText("Player 1 Wins");
 
 									alert.showAndWait();
 									System.exit(0);
@@ -1742,7 +1693,7 @@ public class ScrimishGUI extends Application{
 									Alert alert = new Alert(AlertType.INFORMATION);
 									alert.setTitle("Information Dialog");
 									alert.setHeaderText(null);
-									alert.setContentText("Player Wins");
+									alert.setContentText("Player 1 Wins");
 
 									alert.showAndWait();
 									System.exit(0);
@@ -1770,14 +1721,11 @@ public class ScrimishGUI extends Application{
 								
 							}
 							
-							//System.out.println("The attacking card after attack is: " + AI[player2I][player2J].getName());
-							//System.out.println("The defending card after attack is: " +person[player1I][player1J].getName());
+							System.out.println("The attacking card after attack is: " + AI[player2I][player2J].getName());
+							System.out.println("The defending card after attack is: " +person[player1I][player1J].getName());
 							history.appendText("The attacking card after attack is: " + AI[player2I][player2J].getName() + "\n");
 							history.appendText("The defending card after attack is: " +person[player1I][player1J].getName() + "\n");
 							//updating status 
-							history.appendText("\n");
-							history.appendText("End of Round\n");
-							history.appendText("\n");
 							AIPileStat();
 							playerPileStat();
 						}
